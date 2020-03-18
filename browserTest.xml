@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Browsers test">
+    <test name="Edge Test">
+        <classes>
+            <class name="basic.BasicEdgeTest"/>
+        </classes>
+    </test>
+    <test name="Firefox Test">
+        <classes>
+            <class name="basic.BasicFirefoxTest"/>
+        </classes>
+    </test>
+    <test name="Opera Test">
+        <classes>
+            <class name="basic.BasicOperaTest"/>
+        </classes>
+    </test>
+    <test name="Chrome Test">
+        <classes>
+            <class name="basic.BasicChromeTest"/>
+        </classes>
+    </test>
+</suite>

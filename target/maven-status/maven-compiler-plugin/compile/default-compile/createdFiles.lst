@@ -1,0 +1,3 @@
+selenium\pages\LoginPage.class
+selenium\base\TestBase.class
+selenium\base\TestCommons.class
