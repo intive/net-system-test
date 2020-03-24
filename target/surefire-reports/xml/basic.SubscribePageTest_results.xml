@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="5,172">
+           time="14,788">
   <properties />
   
   
-            <testcase name="subscribePageTest" time="5,172" classname="basic.SubscribePageTest" />
+            <testcase name="subscribePageTest" time="14,788" classname="basic.SubscribePageTest" />
       
 </testsuite>

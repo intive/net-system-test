@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="12,897">
+           time="12,381">
   <properties />
   
   
-            <testcase name="openBrowser" time="12,897" classname="basic.BasicOperaTest" />
+            <testcase name="openBrowser" time="12,381" classname="basic.BasicOperaTest" />
       
 </testsuite>

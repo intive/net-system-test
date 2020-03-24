@@ -29,7 +29,7 @@ public class SubscribePageTest {
         driver.get(url);
         driver.findElement(By.id("inputUsername")).sendKeys("testqa");
         driver.findElement(By.id("inputPassword")).sendKeys("1234");
-        driver.findElement(By.xpath("/html/body/app/div/div/div/div/div[2]/form/button")).click();
+        driver.findElement(By.cssSelector(".btn")).click();
         driver.findElement(By.cssSelector(".table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(4) > button:nth-child(1)")).click();
         Thread.sleep(8000);
         driver.quit();
