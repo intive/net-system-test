@@ -15,7 +15,7 @@ public class TestBase {
 
     @BeforeSuite
     public void setChromedriverPath() {
-        System.setProperty("webdriver.chrome.driver","D:\\Patronage 2020\\Repo\\BitCoiny\\patronage-qa-bitcoiny\\bitcoiny\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Windows\\chromedriver.exe");
     }
 
     @BeforeTest

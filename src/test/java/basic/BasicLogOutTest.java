@@ -9,8 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class BasicLoginPageTest {
-
+public class BasicLogOutTest {
     private WebDriver driver;
     private final String url = "https://dev-patronage-btb.azurewebsites.net";
 
@@ -26,13 +25,15 @@ public class BasicLoginPageTest {
     }
 
     @Test
-    public void loginPageTest() throws InterruptedException {
+    public void LogoutPageTest() throws InterruptedException {
         driver.get(url);
         driver.findElement(By.id("inputUsername")).sendKeys("testqa");
         driver.findElement(By.id("inputPassword")).sendKeys("1234");
         driver.findElement(By.cssSelector(".btn")).click();
+        driver.findElement(By.cssSelector("body > app > div.main > div.top-row.px-4 > button")).click();
         Thread.sleep(6000);
         driver.quit();
     }
 
 }
+
