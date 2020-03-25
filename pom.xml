@@ -96,6 +96,7 @@
                                             jeden zestaw testów - bardzo wygodne i użyteczne, ponieważ dzięki temu możemy tworzyć sobie kilka plików
                                             z testami np. konkretnych kawałków systemu, którymi łatwiej jest nam zarządzać i sprawować kontrolę-->
                     <suiteXmlFiles>test.xml,browserTest.xml</suiteXmlFiles>
+                    <useSystemClassLoader>false</useSystemClassLoader>
                 </configuration>
             </plugin>
         </plugins>

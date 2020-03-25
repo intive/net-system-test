@@ -16,7 +16,7 @@ public class BasicLoginPageTest {
 
     @BeforeClass
     private void setUp() {
-        System.setProperty("webdriver.chrome.driver", "D:\\Patronage 2020\\Repo\\BitCoiny\\patronage-qa-bitcoiny\\bitcoiny\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Windows\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
 
