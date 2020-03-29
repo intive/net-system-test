@@ -1,5 +1,6 @@
 package basic;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +17,9 @@ public class BasicLoginPageTest {
 
     @BeforeClass
     private void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Windows\\chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "C:\\Windows\\chromedriver.exe");
+        WebDriverManager.chromedriver().version("80.0.3987.16").setup();
+        //test
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
 
@@ -31,7 +34,7 @@ public class BasicLoginPageTest {
         driver.findElement(By.id("inputUsername")).sendKeys("testqa");
         driver.findElement(By.id("inputPassword")).sendKeys("1234");
         driver.findElement(By.cssSelector(".btn")).click();
-        Thread.sleep(6000);
+        Thread.sleep(10000);
         driver.quit();
     }
 

@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import selenium.pages.LogowaniePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +16,8 @@ public class LogInTest {
     @BeforeTest
 
     public void setup() {
-        System.setProperty("webdriver.chrome.driver","C:\\Windows\\chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver","C:\\Windows\\chromedriver.exe");
+        WebDriverManager.chromedriver().version("80.0.3987.16").setup();
         ChromeOptions options = new ChromeOptions();
        // options.addArguments("--incognito");
         driver = new ChromeDriver(options);
