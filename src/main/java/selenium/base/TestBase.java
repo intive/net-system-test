@@ -1,5 +1,6 @@
 package selenium.base;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,7 +16,7 @@ public class TestBase {
 
     @BeforeSuite
     public void setChromedriverPath() {
-        System.setProperty("webdriver.chrome.driver","C:\\Windows\\chromedriver.exe");
+        WebDriverManager.chromedriver().version("80.0.3987.16").setup();
     }
 
     @BeforeTest
@@ -25,7 +26,6 @@ public class TestBase {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        //Ustawienie domyślnego timeoutu - jeżeli jakiś element nie zostanie odnaleziony na stronie w tym czasie, to zwrócony zostanie wyjątek.
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(url);
     }
