@@ -9,10 +9,8 @@ public class LoginPage extends TestCommons {
 
     @FindBy( id = "inputUsername")
     public WebElement usernameInput;
-
     @FindBy( id = "inputPassword")
     public WebElement passwordInput;
-
     @FindBy( css = ".btn")
     public WebElement submitButton;
 

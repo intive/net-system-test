@@ -4,9 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class BasicFirefoxTest {
+    private final String url = "https://dev-patronage-btb.azurewebsites.net";
 
     @Test
     public void openBrowser() throws InterruptedException {
@@ -18,6 +20,8 @@ public class BasicFirefoxTest {
         WebDriver driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
         driver.get("https://dev-patronage-btb.azurewebsites.net");
+        driver.get(url);
+        Assert.assertEquals(driver.getTitle(), "BTB", "Valid page title. Edge browser open.");
         Thread.sleep(8000);
         driver.quit();
     }

@@ -1,7 +1,9 @@
 basic\BasicEdgeTest.class
 basic\SubscribePageTest.class
-basic\BasicTest.class
+basic\NegativeLoginPageTest.class
 basic\BasicOperaTest.class
+basic\LoginPageTest.class
+basic\NegativeSubscribePageTest.class
 basic\BasicChromeTest.class
-basic\BasicLoginPageTest.class
+basic\ChartViewTest.class
 basic\BasicFirefoxTest.class
