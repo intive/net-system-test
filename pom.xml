@@ -13,7 +13,7 @@
             <artifactId>testng</artifactId>
             <version>7.1.0</version>
             <scope>test</scope>
-        </dependency>
+            </dependency>
         <dependency>
             <groupId>org.uncommons</groupId>
             <artifactId>reportng</artifactId>
@@ -29,7 +29,8 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>2.2.5</version>
+            <version> 3.8.1 </version>
+            <scope> test </scope>
         </dependency>
         <dependency>
             <groupId>com.google.inject</groupId>
@@ -56,13 +57,19 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
-            <version>4.0.0-alpha-3</version>
+            <version>4.0.0-alpha-1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.8.1</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     <build>
@@ -106,6 +113,7 @@
                                             jeden zestaw testów - bardzo wygodne i użyteczne, ponieważ dzięki temu możemy tworzyć sobie kilka plików
                                             z testami np. konkretnych kawałków systemu, którymi łatwiej jest nam zarządzać i sprawować kontrolę-->
                     <suiteXmlFiles>test.xml</suiteXmlFiles>
+                    <useSystemClassLoader>false</useSystemClassLoader>
                 </configuration>
             </plugin>
         </plugins>
