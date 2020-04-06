@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     protected WebDriver driver;
-    private final String url = "https://dev-patronage-btb.azurewebsites.net/";
+    public final String url = "https://dev-patronage-btb.azurewebsites.net/";
 
     @BeforeSuite
     public void setChromedriverPath() {
@@ -26,7 +26,7 @@ public class TestBase {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         driver.get(url);
     }
 

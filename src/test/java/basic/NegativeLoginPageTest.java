@@ -1,6 +1,6 @@
 package basic;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,7 +19,7 @@ public class NegativeLoginPageTest {
 
     @BeforeClass
     private void setUp() {
-        WebDriverManager.chromedriver().version("80.0.3987.16").setup();
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
 
