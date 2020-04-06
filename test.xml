@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="BTB Page Test">
+    <test name="Login Test">
+        <classes>
+            <class name="BasicLoginPageTest"/>
+        </classes>
+    </test>
+    <test name="Logout Test">
+        <classes>
+            <class name="LogOutTest"/>
+        </classes>
+    </test>
+    <test name="Create Alerts Test">
+        <classes>
+            <class name="CreateAlertsTest"/>
+        </classes>
+    </test>
+</suite>

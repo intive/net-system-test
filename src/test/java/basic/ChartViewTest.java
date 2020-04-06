@@ -25,7 +25,7 @@ public class ChartViewTest {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(70, TimeUnit.SECONDS);
     }
     @AfterClass
     private void tearDown() {

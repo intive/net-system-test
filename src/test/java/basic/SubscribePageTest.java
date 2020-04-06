@@ -26,7 +26,7 @@ public class SubscribePageTest {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     @AfterClass
@@ -51,7 +51,7 @@ public class SubscribePageTest {
 
         driver.findElement(By.id("value")).sendKeys("0,25");
 
-        WebElement sendEmail = driver.findElement(By.id("sendEmail"));
+       WebElement sendEmail = driver.findElement(By.id("sendEmail"));
         sendEmail.click();
 
         driver.findElement(By.id("email")).sendKeys("patronagetest01@gmail.com");
