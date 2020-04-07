@@ -10,7 +10,7 @@ public class EditPage {
     private By password = By.id("inputPassword");
     private By submitButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/button");
     private By profileButton = By.xpath("/html/body/app/div[2]/div[2]/ul/li[2]/a");
-    private By editButton = By.xpath("/html/body/app/div[3]/div[2]/div[1]/div[2]/div[3]/a");
+    private By editButton = By.xpath("/html/body/app/div[3]/div[2]/div[1]/div/div[2]/div[3]/a");
      private By editUsername = By.id("username");
     private By editBio = By.id("profileBio");
     private By editFavourite = By.id("favouritePair");

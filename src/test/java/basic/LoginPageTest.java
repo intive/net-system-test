@@ -28,8 +28,8 @@ public class LoginPageTest {
     @Test
     public void loginPageTest() throws InterruptedException {
         driver.get(url);
-        driver.findElement(By.id("inputUsername")).sendKeys("testqa");
-        driver.findElement(By.id("inputPassword")).sendKeys("1234");
+        driver.findElement(By.id("inputUsername")).sendKeys("test1234");
+        driver.findElement(By.id("inputPassword")).sendKeys("test1234");
         driver.findElement(By.cssSelector(".btn")).click();
         Thread.sleep(6000);
         driver.quit();

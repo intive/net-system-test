@@ -22,7 +22,7 @@ public class TestBase {
     @BeforeTest
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
+        //options.addArguments("--incognito");
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
