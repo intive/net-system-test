@@ -63,4 +63,9 @@
             <class name="SortAlertsTest"></class>
         </classes>
     </test>
+    <test name="Test na demo">
+        <classes>
+            <class name="BTBTest"></class>
+        </classes>
+    </test>
 </suite>
