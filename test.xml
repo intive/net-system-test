@@ -12,8 +12,55 @@
         </classes>
     </test>
     <test name="Create Alerts Test">
+    <classes>
+        <class name="CreateAlertsTest"/>
+    </classes>
+    </test>
+    <test name="Create and Login">
         <classes>
-            <class name="CreateAlertsTest"/>
+            <class name="CreateAndLoginTest"/>
+        </classes>
+    </test>
+    <test name="Delete alerts">
+        <classes>
+            <class name="DeleteAlertsTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Create account">
+        <classes>
+            <class name="CreateAccountTest"></class>
+        </classes>
+    </test>
+    <test name="Edit alerts">
+        <classes>
+            <class name="EditAlertsTest"></class>
+        </classes>
+    </test>
+    <test name="Edit profile">
+        <classes>
+            <class name="EditTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Expand and collapse alert">
+        <classes>
+            <class name="ExpandCollapseAlertTest"></class>
+        </classes>
+    </test>
+    <test name="Favourite pairs">
+        <classes>
+            <class name="FavouritePairTest"></class>
+        </classes>
+    </test>
+    <test name="Remember me options">
+        <classes>
+            <class name="RememberMeTest"></class>
+        </classes>
+    </test>
+    <test name="Sort alerts">
+        <classes>
+            <class name="SortAlertsTest"></class>
         </classes>
     </test>
 </suite>
