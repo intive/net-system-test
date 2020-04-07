@@ -37,7 +37,7 @@ public class CreateAccountTest extends TestBase{
         cap = new CreateAccountPage(driver);
 
         cap.clickCreateAccount();
-       cap.createAccount("alam123", "qazwsx", "qazwsx");
+       cap.createAccount("alam1234", "qazwsx", "qazwsx");
        cap.clickCreate();
 
 
