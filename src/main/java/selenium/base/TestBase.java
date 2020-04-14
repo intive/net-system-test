@@ -5,8 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import selenium.pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -29,6 +31,12 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         driver.get(url);
     }
+
+   /* @BeforeGroups(groups = "loginRequired")
+    public void login(){
+        LoginPage loginPage=new LoginPage(driver);
+        loginPage.signIn("test1234", "test1234");*/
+
 
     @AfterTest
     public void tearDown() {
