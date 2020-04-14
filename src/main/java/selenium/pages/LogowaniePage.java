@@ -37,7 +37,7 @@ public class LogowaniePage {
     }
 
 
-    public void signIn(String strLogin, String strPassword) {
+    public void signIn (String strLogin, String strPassword) {
         this.setLogin(strLogin);
         this.setPassword(strPassword);
        //this.clickRememberMe();

@@ -18,10 +18,16 @@ public class LoginPage extends TestCommons {
         initElements(driver);
     }
 
-    public void login (String text) {
-        sendKeysToElement(usernameInput, text);
-        sendKeysToElement(passwordInput, text);
-        clickElement(submitButton);
-    }
+
+    /*public void signIn (String strLogin, String strPassword) {
+      /this.setLogin(strLogin);
+       this.setPassword(strPassword);
+        this.clickRememberMe();
+       this.clickSignIn();*/
+    public void signIn (String text){
+            sendKeysToElement(usernameInput, text);
+            sendKeysToElement(passwordInput, text);
+            clickElement(submitButton);
+        }
 }
 
