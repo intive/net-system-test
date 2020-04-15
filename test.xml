@@ -3,7 +3,7 @@
 <suite name="BTB Page Test">
     <test name="Login Test">
         <classes>
-            <class name="BasicLoginPageTest"/>
+            <class name="LoginPageTest"/>
         </classes>
     </test>
     <test name="Logout Test">
@@ -63,9 +63,4 @@
             <class name="SortAlertsTest"></class>
         </classes>
     </test>
-    <test name="Test na demo">
-        <classes>
-            <class name="BTBTest"></class>
-        </classes>
-    </test>
-</suite>
+        </suite>

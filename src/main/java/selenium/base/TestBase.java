@@ -4,10 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import selenium.pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
@@ -24,7 +21,7 @@ public class TestBase {
     @BeforeTest
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--incognito");
+         options.addArguments("--incognito");
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
@@ -32,14 +29,13 @@ public class TestBase {
         driver.get(url);
     }
 
-   /* @BeforeGroups(groups = "loginRequired")
-    public void login(){
-        LoginPage loginPage=new LoginPage(driver);
-        loginPage.signIn("test1234", "test1234");*/
-
+     @BeforeGroups(groups = "loginRequired")
+     public void login(){
+     LoginPage loginPage=new LoginPage(driver);
+     loginPage.signIn("test1234", "test1234");
+     }
 
     @AfterTest
     public void tearDown() {
         driver.quit();
-    }
-}
+    }}

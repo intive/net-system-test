@@ -28,12 +28,12 @@ public class CreateAlertsTest extends TestBase {
 
     }*/
 
-    @Test
+    @Test(groups = "loginRequired")
     public void AlertsTest() throws InterruptedException {
-        driver.get(url);
-        driver.findElement(By.id("inputUsername")).sendKeys("test1234");
-        driver.findElement(By.id("inputPassword")).sendKeys("test1234");
-        driver.findElement(By.cssSelector(".btn")).click();
+        //driver.get(url);
+       // driver.findElement(By.id("inputUsername")).sendKeys("test1234");
+       // driver.findElement(By.id("inputPassword")).sendKeys("test1234");
+       // driver.findElement(By.cssSelector(".btn")).click();
         driver.findElement(By.xpath("/html/body/app/div[3]/div[2]/table/tbody/tr[1]/td[5]/button")).click();
         driver.findElement(By.id("condition")).click();
         Select options = new Select(driver.findElement(By.tagName("select")));
