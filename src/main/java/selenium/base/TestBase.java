@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
+import selenium.pages.LogOutPage;
 import selenium.pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
@@ -21,7 +22,7 @@ public class TestBase {
     @BeforeTest
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-         options.addArguments("--incognito");
+       // options.addArguments("--incognito");
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
@@ -29,10 +30,10 @@ public class TestBase {
         driver.get(url);
     }
 
-     @BeforeGroups(groups = "loginRequired")
+     @BeforeMethod(onlyForGroups = "loginRequired")
      public void login(){
-     LoginPage loginPage=new LoginPage(driver);
-     loginPage.signIn("test1234", "test1234");
+     LoginPage lp=new LoginPage(driver);
+     lp.signIn("test1234", "test1234");
      }
 
     @AfterTest

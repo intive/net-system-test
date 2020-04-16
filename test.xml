@@ -43,9 +43,9 @@
             </class>
         </classes>
     </test>
-    <test name="Expand and collapse alert">
+    <test name="Delete Favourite">
         <classes>
-            <class name="ExpandCollapseAlertTest"></class>
+            <class name="DeleteFavourite"></class>
         </classes>
     </test>
     <test name="Favourite pairs">

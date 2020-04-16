@@ -11,7 +11,6 @@ public class CreateAccountPage {
     private By enterUsername = By.id("inputUsername");
     private By password = By.id("inputPassword");
     private By confirmPassword = By.id("inputPasswordConfirm");
-   // private By rememberButton=By.id("inputRememberMe");
     private By createAccountButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/button");
 
 
@@ -40,24 +39,17 @@ public class CreateAccountPage {
         driver.findElement(confirmPassword).clear();
         driver.findElement(confirmPassword).sendKeys(strConfirmPassword);
     }
-   // public void clickRememberMe() {
-   // driver.findElement(rememberButton).click();
-
-       // WebElement checkbox = driver.findElement(By.id("inputRememberMe"));
-       // checkbox.click();
-   //  }
 
     public void clickCreateAccount() {
+
         driver.findElement(createAccountButton).click();
     }
-
 
     public void createAccount (String strEnterUsername, String strPassword, String strConfirmPassword) {
         this.clickCreate();
         this.setEnterUsername(strEnterUsername);
         this.setPassword(strPassword);
         this.setConfirmPassword(strConfirmPassword);
-      //  this.clickRememberMe();
         this.clickCreateAccount();
 
     }

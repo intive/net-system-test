@@ -12,9 +12,10 @@ public class CreateAndLoginPage {
     private By enterPassword = By.id("inputPassword");
     private By confirmPassword = By.id("inputPasswordConfirm");
     private By createAccountButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/button");
-  //  private By username = By.id("inputUsername");
-   // private By password = By.id("inputPassword");
-  //  private By submitButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/button");
+  private By username = By.id("inputUsername");
+   private By password = By.id("inputPassword");
+  private By submitButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/button");
+
 
 
 
@@ -47,7 +48,7 @@ public class CreateAndLoginPage {
     }
 
 
-   /* public void setUsername(String strUsername){
+   public void setUsername(String strUsername){
 
         driver.findElement(username).clear();
         driver.findElement(username).sendKeys(strUsername);
@@ -61,22 +62,21 @@ public class CreateAndLoginPage {
     public void clickSignIn() {
         driver.findElement(submitButton).click();
     }
-*/
+
 
     public void createAccount (String strEnterUsername, String strEnterPassword, String strConfirmPassword) {
         this.clickCreate();
         this.setEnterUsername(strEnterUsername);
         this.setEnterPassword(strEnterPassword);
         this.setConfirmPassword(strConfirmPassword);
-        //this.clickRememberMe();
         this.clickCreateAccount();
     }
-  /* public void login (String strUsername, String strPassword)    {
+  public void login (String strUsername, String strPassword)    {
         this.setUsername(strUsername);
         this.setPassword(strPassword);
         this.clickSignIn();
     }
-*/
+
 }
 
 
