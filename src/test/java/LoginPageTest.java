@@ -12,15 +12,11 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginPageTest extends TestBase {
 
-    @Test(groups = "loginRequired")
+    @Test
     public void loginPageTest() throws InterruptedException {
-        Thread.sleep(3000);
-      /*  loginP=new LoginPage(driver);
-        loginp.signIn("test1234", "test1234");
-        loginp.clickSignIn();*/
+        LoginPage loginPage=new LoginPage(driver);
+        loginPage.signIn("admin", "admin");
+        loginPage.clickSignIn();
 
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/app/div[3]/div[2]/h1")).getText().equals("Dashboard"));
-
-
-
-    }}
+    }
+}
