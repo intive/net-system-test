@@ -9,8 +9,9 @@ public class CreateAccountTest extends TestBase{
     public  void testCreateAccountPage() throws InterruptedException {
           CreateAccountPage createAccount = new CreateAccountPage(driver);
         createAccount.clickCreateAccount();
-        createAccount.createAccount("qaz12345", "qazwsx", "qazwsx");
+        createAccount.createAccount("test", "testpatron2020@o2.pl", "test", "test");
         createAccount.clickCreate();
+
     }
 
 }
