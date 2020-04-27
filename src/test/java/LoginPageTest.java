@@ -17,6 +17,5 @@ public class LoginPageTest extends TestBase {
         LoginPage loginPage=new LoginPage(driver);
         loginPage.signIn("admin", "admin");
         loginPage.clickSignIn();
-
     }
 }

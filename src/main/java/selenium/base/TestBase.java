@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     protected WebDriver driver;
-    public final String url = "https://dev-patronage-btb.azurewebsites.net/";
+    public final String url = "https://qa-patronage-btb.azurewebsites.net/";
 
     @BeforeSuite
     public void setChromedriverPath() {
@@ -22,7 +22,7 @@ public class TestBase {
     @BeforeTest
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-       // options.addArguments("--incognito");
+      options.addArguments("--incognito");
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
