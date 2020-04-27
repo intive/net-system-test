@@ -9,6 +9,7 @@ public class CreateAndLoginPage {
 
     private By createButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/a/h6");
     private By enterUsername = By.id("inputUsername");
+    private By enterEmail = By.id("inputEmail");
     private By enterPassword = By.id("inputPassword");
     private By confirmPassword = By.id("inputPasswordConfirm");
     private By createAccountButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/button");
@@ -33,6 +34,11 @@ public class CreateAndLoginPage {
         driver.findElement(enterUsername).sendKeys(strEnterUsername);
     }
 
+    public void setEnterEmail(String strEnterEmail){
+
+        driver.findElement(enterEmail).clear();
+        driver.findElement(enterEmail).sendKeys(strEnterEmail);
+    }
     public void setEnterPassword(String strEnterPassword){
         driver.findElement(enterPassword).clear();
         driver.findElement(enterPassword).sendKeys(strEnterPassword);
@@ -64,9 +70,10 @@ public class CreateAndLoginPage {
     }
 
 
-    public void createAccount (String strEnterUsername, String strEnterPassword, String strConfirmPassword) {
+    public void createAccount (String strEnterUsername, String strEnterEmail, String strEnterPassword, String strConfirmPassword) {
         this.clickCreate();
         this.setEnterUsername(strEnterUsername);
+        this.setEnterEmail(strEnterEmail);
         this.setEnterPassword(strEnterPassword);
         this.setConfirmPassword(strConfirmPassword);
         this.clickCreateAccount();
