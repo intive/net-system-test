@@ -63,4 +63,9 @@
             <class name="SortAlertsTest"></class>
         </classes>
     </test>
+    <test name="Change Password">
+        <classes>
+            <class name="ChangePassword"></class>
+        </classes>
+    </test>
         </suite>
