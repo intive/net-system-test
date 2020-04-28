@@ -12,8 +12,8 @@ public class EditAlertPage extends TestCommons {
     private By myAlerts = By.xpath("/html/body/app/div[3]/div[2]/div[2]/div/button[1]");
     private By alert = By.xpath("/html/body/app/div[3]/div[2]/div[6]/div[1]/div[2]/button[1]/span");
     private By value = By.id("value");
-    private By confirm = By.cssSelector("#innerDiv > div.text-right > button.btn.btn-success.btn-sm");
-    private By pause=By.id("innerDiv");
+    private By confirm = By.xpath("//*[@id=\"innerContainer\"]/div[8]/button[2]");
+    private By pause=By.xpath("/html/body/app/div[1]/div[2]/div");
 
     public EditAlertPage(WebDriver driver) {
         this.driver = driver;
