@@ -12,11 +12,11 @@ public class CreateAlertsPage extends TestCommons {
     public By alertButton = By.xpath("/html/body/app/div[3]/div[2]/table/tbody/tr[1]/td[5]/button");
     public By conditionButton = By.id("condition");
     public By value = By.id("value");
-    public By confirmButton = By.cssSelector("#innerDiv > div.text-right > button.btn.btn-success.btn-sm");
+    public By confirmButton = By.cssSelector("#innerContainer > div.text-right > button.btn.btn-success.btn-sm");
     private By emailAlert = By.xpath("/html/body/app/div[3]/div[2]/table/tbody/tr[8]/td[5]/button");
     private By emailValue =By.id("email");
     private By textEmail=By.id("message");
-    private By pause=By.id("innerDiv");
+    private By pause=By.xpath("/html/body/app/div[1]/div[2]/div");
 
     public CreateAlertsPage(WebDriver driver) {
         this.driver = driver;
