@@ -3,6 +3,7 @@ package selenium.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class CreateAccountPage {
     private WebDriver driver;
@@ -59,7 +60,7 @@ public class CreateAccountPage {
         this.setPassword(strPassword);
         this.setConfirmPassword(strConfirmPassword);
         this.clickCreateAccount();
-
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/app/div/div/div/div/div[2]/form/div[1]/label")).getText().equals("Username"));
     }
 
 }
