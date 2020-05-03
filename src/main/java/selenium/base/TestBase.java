@@ -16,7 +16,7 @@ public class TestBase {
 
     @BeforeSuite
     public void setChromedriverPath() {
-        WebDriverManager.chromedriver().version("80.0.3987.16").setup();
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeTest
