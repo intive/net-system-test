@@ -14,6 +14,8 @@ public class CreateAccountPage {
     private By password = By.id("inputPassword");
     private By confirmPassword = By.id("inputPasswordConfirm");
     private By createAccountButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/button");
+    private By checking =By.xpath("/html/body/app/div/div/div/div/div[2]/form/div[1]/label");
+
 
 
 
@@ -60,7 +62,7 @@ public class CreateAccountPage {
         this.setPassword(strPassword);
         this.setConfirmPassword(strConfirmPassword);
         this.clickCreateAccount();
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/app/div/div/div/div/div[2]/form/div[1]/label")).getText().equals("Username"));
+        Assert.assertTrue(driver.findElement(checking).getText().equals("Username"));
     }
 
 }
