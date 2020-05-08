@@ -2,21 +2,23 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import selenium.base.TestBase;
-import selenium.pages.CreateAndLoginPage;
+import selenium.pages.CreateAccountPage;
+import selenium.pages.LoginPage;
 
 public class CreateAndLoginTest extends TestBase {
 
     @Test(priority = 0)
 
     public  void testCreateAndLoginPage(){
-        CreateAndLoginPage createAndLogin = new CreateAndLoginPage(driver);
+        CreateAccountPage createAccount = new CreateAccountPage(driver);
+        createAccount.clickCreateAccount();
+        createAccount.createAccount("alam1234","testpatron2020@o2.pl","qazwsx1", "qazwsx1");
+        createAccount.clickCreate();
 
-        createAndLogin.clickCreateAccount();
-        createAndLogin.createAccount("alam1234", "qazwsx1", "qazwsx1");
-        createAndLogin.clickCreate();
-        createAndLogin.login("alam1234", "qazwsx1");
-        createAndLogin.clickSignIn();
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/app/div[3]/div[2]/h1")).getText().equals("Dashboard"));
+        LoginPage login=new LoginPage(driver);
+        login.signIn("alam1234", "qazwsx1");
+        login.clickSignIn();
+        
     }
 
 }
