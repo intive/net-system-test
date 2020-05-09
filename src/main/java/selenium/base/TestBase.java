@@ -28,14 +28,14 @@ public class TestBase {
         driver.get(url);
     }
 
-     @BeforeMethod(onlyForGroups = "loginRequired")
-     public void login(){
-     LoginPage lp=new LoginPage(driver);
-     lp.signIn("test1234", "test1234");
-     }
+    @BeforeMethod(onlyForGroups = "loginRequired")
+    public void login(){
+        LoginPage lp=new LoginPage(driver);
+        lp.signIn("test1234", "test1234");
+    }
 
-     @AfterTest
-     public void tearDown() {
+    @AfterTest
+    public void tearDown() {
         driver.quit();
     }
 }
