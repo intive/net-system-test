@@ -13,4 +13,3 @@ public class LogOutTest extends TestBase {
         Assert.assertEquals(logOut.getMessage(),"Sign In");
     }
 }
-
