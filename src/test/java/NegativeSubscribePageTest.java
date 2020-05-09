@@ -1,56 +1,53 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import selenium.base.TestBase;
+import selenium.pages.SubscribePage;
 
-import java.util.concurrent.TimeUnit;
+public class NegativeSubscribePageTest extends TestBase {
 
-public class NegativeSubscribePageTest {
-    private WebDriver driver;
-    private final String url = "https://dev-patronage-btb.azurewebsites.net";
-
-    @BeforeClass
-    protected void setUp() {
-        WebDriverManager.chromedriver().version("80.0.3987.16").setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
-
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    @Test(priority = 0, groups = "loginRequired")
+    public void negativeSubscribePageTestValue() {
+        SubscribePage negSubPageValIn = new SubscribePage(driver);
+        negSubPageValIn.setSubscribeButton();
+        negSubPageValIn.setConditionInput("Crossing");
+        negSubPageValIn.setValueType("Volume");
+        negSubPageValIn.setValueInput("aaa");
+        negSubPageValIn.setConfirmButton();
+        Assert.assertEquals(negSubPageValIn.getValidationMessage(), "The Value field must be a number.", "Invalid Value - letters - checked");
     }
 
-    @AfterClass
-    private void tearDown() {
-        driver.quit();
+    @Test(priority = 1)
+    public void negativeSubscribePageTestPrice() {
+        SubscribePage negSubPagePrice = new SubscribePage(driver);
+        negSubPagePrice.setConditionInput("Crossing");
+        negSubPagePrice.setValueType("Price");
+        negSubPagePrice.setValueInput("0");
+        negSubPagePrice.setConfirmButton();
+        Assert.assertEquals(negSubPagePrice.getValidationMessage(), "Please enter a number greater than zero.", "Invalid Value - zero - checked");
     }
 
-    @Test
-    public void subscribePageTest() throws InterruptedException {
+    @Test(priority = 2)
+    public void negativeSubscribePageTestVolume() {
+        SubscribePage negSubPageVolume = new SubscribePage(driver);
+        negSubPageVolume.setConditionInput("Crossing");
+        negSubPageVolume.setValueType("Volume");
+        negSubPageVolume.setValueInput("0");
+        negSubPageVolume.setConfirmButton();
+        Assert.assertEquals(negSubPageVolume.getValidationMessage(), "Please enter a number greater than zero.", "Invalid Volume - zero - checked");
+    }
 
-        driver.get(url);
-        driver.findElement(By.id("inputUsername")).sendKeys("admin");
-        driver.findElement(By.id("inputPassword")).sendKeys("admin");
-        driver.findElement(By.cssSelector(".btn")).click();
-        driver.findElement(By.cssSelector(".table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(4) > button:nth-child(1)")).click();
-
-        WebElement sendEmail = driver.findElement(By.id("sendEmail"));
-        sendEmail.click();
-
-        driver.findElement(By.id("email")).sendKeys("patronagetest01@gmail.com");
-        driver.findElement(By.cssSelector(".btn-success")).click();
-
-        driver.get(url);
-        Assert.assertEquals(driver.getTitle(), "BTB", "Alert wasn't added.");
-
-        Thread.sleep(5000);
-        driver.quit();
+    @Test(priority = 3)
+    public void negativeSubscribePageTestNoMail() {
+        SubscribePage negSubPageNoMail = new SubscribePage(driver);
+        negSubPageNoMail.setConditionInput("Crossing");
+        negSubPageNoMail.setValueType("Volume");
+        negSubPageNoMail.setValueInput("100");
+        negSubPageNoMail.setOnlyOnce();
+        negSubPageNoMail.setSendEmail();
+        negSubPageNoMail.setEmailInput("");
+        negSubPageNoMail.setMessageInput("");
+        negSubPageNoMail.setConfirmButton();
+        Assert.assertEquals(negSubPageNoMail.getValidationMessage(), "Email is required.", "Empty Email input checked");
     }
 
 }

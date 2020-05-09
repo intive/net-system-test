@@ -24,7 +24,7 @@ public class TestBase {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get(url);
     }
 
@@ -37,4 +37,5 @@ public class TestBase {
      @AfterTest
      public void tearDown() {
         driver.quit();
-    }}
+    }
+}

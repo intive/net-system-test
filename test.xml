@@ -12,9 +12,9 @@
         </classes>
     </test>
     <test name="Create Alerts Test">
-    <classes>
-        <class name="CreateAlertsTest"/>
-    </classes>
+        <classes>
+            <class name="CreateAlertsTest"/>
+        </classes>
     </test>
     <test name="Create and Login">
         <classes>
@@ -23,49 +23,80 @@
     </test>
     <test name="Delete alerts">
         <classes>
-            <class name="DeleteAlertsTest">
-            </class>
+            <class name="DeleteAlertsTest"/>
         </classes>
     </test>
     <test name="Create account">
         <classes>
-            <class name="CreateAccountTest"></class>
+            <class name="CreateAccountTest"/>
         </classes>
     </test>
     <test name="Edit alerts">
         <classes>
-            <class name="EditAlertsTest"></class>
+            <class name="EditAlertsTest"/>
         </classes>
     </test>
     <test name="Edit profile">
         <classes>
-            <class name="EditTest">
-            </class>
+            <class name="EditTest"/>
         </classes>
     </test>
     <test name="Favourite pairs">
         <classes>
-            <class name="FavouritePairTest"></class>
+            <class name="FavouritePairTest"/>
         </classes>
     </test>
     <test name="Delete Favourite">
         <classes>
-            <class name="DeleteFavouriteTest"></class>
+            <class name="DeleteFavouriteTest"/>
         </classes>
     </test>
     <test name="Remember me options">
         <classes>
-            <class name="RememberMeTest"></class>
+            <class name="RememberMeTest"/>
         </classes>
     </test>
     <test name="Sort alerts">
         <classes>
-            <class name="SortAlertsTest"></class>
+            <class name="SortAlertsTest"/>
         </classes>
     </test>
     <test name="Change Password">
         <classes>
-            <class name="ChangePasswordTest"></class>
+            <class name="ChangePasswordTest"/>
         </classes>
     </test>
-        </suite>
+    <test name="History View">
+        <classes>
+            <class name="HistoryViewTest"/>
+        </classes>
+    </test>
+    <test name="Chart View">
+        <classes>
+            <class name="ChartViewTest"/>
+        </classes>
+    </test>
+    <test name="Indicators View">
+        <classes>
+            <class name="IndicatorsViewTest"/>
+        </classes>
+    </test>
+    <test name="Positive Subscribe">
+        <classes>
+            <class name="SubscribePageTest"/>
+        </classes>
+    </test>
+    <test name="Negative Subscribe">
+        <classes>
+            <class name="NegativeSubscribePageTest"/>
+        </classes>
+    </test>
+    <test name="Different browsers">
+        <classes>
+            <class name="BasicOperaTest"/>
+            <class name="BasicFirefoxTest"/>
+            <class name="BasicEdgeTest"/>
+            <class name="BasicChromeTest"/>
+        </classes>
+    </test>
+</suite>
