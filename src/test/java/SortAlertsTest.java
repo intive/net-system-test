@@ -1,4 +1,3 @@
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import selenium.base.TestBase;
@@ -7,7 +6,7 @@ import selenium.pages.SortAlertsPage;
 public class SortAlertsTest extends TestBase {
 
     @Test(groups = "loginRequired")
-    public void loginPageTest() throws InterruptedException {
+    public void loginPageTest(){
         SortAlertsPage sortAlert = new SortAlertsPage(driver);
 
         sortAlert.setMyProfile();
@@ -19,7 +18,6 @@ public class SortAlertsTest extends TestBase {
         sortAlert.setSort2();
         sortAlert.setCollapse();
 
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/app/div[3]/div[2]/div[3]/h1")).getText().equals("My Alerts"));
-
+        Assert.assertEquals(sortAlert.getMessage(), "Dashboard");
     }
-    }
+}

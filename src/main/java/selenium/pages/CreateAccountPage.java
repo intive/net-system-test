@@ -1,39 +1,33 @@
 package selenium.pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 public class CreateAccountPage {
     private WebDriver driver;
 
-    private By createButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/a/h6");
+    private By createButton = By.xpath("/html/body/app/div/div/div/div/div/form/div[5]/a");
     private By enterUsername = By.id("inputUsername");
     private By email = By.id("inputEmail");
     private By password = By.id("inputPassword");
     private By confirmPassword = By.id("inputPasswordConfirm");
-    private By createAccountButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/button");
-
-
+    private By createAccountButton = By.cssSelector("body > app > div > div > div > div > div > form > div:nth-child(5) > input");
+    private By check =By.xpath("/html/body/app/div/div/div/div/div/h5");
 
 
     public CreateAccountPage (WebDriver driver) {
         this.driver = driver;
     }
 
-        public void clickCreate() {
+    public void clickCreate() {
         driver.findElement(createButton).click();
-
     }
-    public void setEnterUsername(String strEnterUsername){
 
+    public void setEnterUsername(String strEnterUsername){
         driver.findElement(enterUsername).clear();
         driver.findElement(enterUsername).sendKeys(strEnterUsername);
     }
 
     public void setEmail(String strEmail){
-
         driver.findElement(email).clear();
         driver.findElement(email).sendKeys(strEmail);
     }
@@ -49,7 +43,6 @@ public class CreateAccountPage {
     }
 
     public void clickCreateAccount() {
-
         driver.findElement(createAccountButton).click();
     }
 
@@ -60,7 +53,10 @@ public class CreateAccountPage {
         this.setPassword(strPassword);
         this.setConfirmPassword(strConfirmPassword);
         this.clickCreateAccount();
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/app/div/div/div/div/div[2]/form/div[1]/label")).getText().equals("Username"));
+    }
+
+    public String getMessage() {
+        return driver.findElement(check).getText();
     }
 
 }
