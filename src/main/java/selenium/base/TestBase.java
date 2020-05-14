@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
-import selenium.pages.LogOutPage;
 import selenium.pages.LoginPage;
-
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -16,13 +14,13 @@ public class TestBase {
 
     @BeforeSuite
     public void setChromedriverPath() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().version("81").setup();
     }
 
     @BeforeTest
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-      options.addArguments("--incognito");
+        options.addArguments("--incognito");
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
@@ -36,7 +34,7 @@ public class TestBase {
      lp.signIn("test1234", "test1234");
      }
 
-    @AfterTest
-    public void tearDown() {
+     @AfterTest
+     public void tearDown() {
         driver.quit();
     }}

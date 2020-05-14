@@ -2,7 +2,6 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import selenium.base.TestBase;
-import selenium.pages.CreateAndLoginPage;
 import selenium.pages.FavouritePage;
 
 public class DeleteFavourite extends TestBase {
