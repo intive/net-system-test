@@ -1,17 +1,14 @@
 package selenium.pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import selenium.base.TestCommons;
 
-public class LoginPage extends TestCommons {
+public class LoginPage {
     private WebDriver driver;
 
     private By login = By.id("inputUsername");
     private By password = By.id("inputPassword");
-    private By submitButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/button");
+    private By submitButton = By.xpath("/html/body/app/div/div/div/div/div/form/div[4]/input");
+    private By check =By.xpath("/html/body/app/div[2]/div/h1");
 
     public LoginPage(WebDriver driver)  {
         this.driver = driver;
@@ -32,12 +29,14 @@ public class LoginPage extends TestCommons {
         driver.findElement(submitButton).click();
     }
 
-
     public void signIn(String strLogin, String strPassword) {
         this.setLogin(strLogin);
         this.setPassword(strPassword);
         this.clickSignIn();
+    }
 
+    public String getMessages() {
+        return driver.findElement(check).getText();
     }
 
 }

@@ -43,14 +43,14 @@
             </class>
         </classes>
     </test>
-    <test name="Delete Favourite">
-        <classes>
-            <class name="DeleteFavourite"></class>
-        </classes>
-    </test>
     <test name="Favourite pairs">
         <classes>
             <class name="FavouritePairTest"></class>
+        </classes>
+    </test>
+    <test name="Delete Favourite">
+        <classes>
+            <class name="DeleteFavouriteTest"></class>
         </classes>
     </test>
     <test name="Remember me options">
@@ -61,6 +61,11 @@
     <test name="Sort alerts">
         <classes>
             <class name="SortAlertsTest"></class>
+        </classes>
+    </test>
+    <test name="Change Password">
+        <classes>
+            <class name="ChangePasswordTest"></class>
         </classes>
     </test>
         </suite>

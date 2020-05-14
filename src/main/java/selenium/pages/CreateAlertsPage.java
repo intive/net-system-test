@@ -1,22 +1,21 @@
 package selenium.pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import selenium.base.TestCommons;
 
-public class CreateAlertsPage extends TestCommons {
+public class CreateAlertsPage {
     private WebDriver driver;
 
-    public By alertButton = By.xpath("/html/body/app/div[3]/div[2]/table/tbody/tr[1]/td[5]/button");
-    public By conditionButton = By.id("condition");
-    public By value = By.id("value");
-    public By confirmButton = By.cssSelector("#innerDiv > div.text-right > button.btn.btn-success.btn-sm");
-    private By emailAlert = By.xpath("/html/body/app/div[3]/div[2]/table/tbody/tr[8]/td[5]/button");
+    private By alertButton = By.xpath("/html/body/app/div[2]/div/div/table/tbody/tr[1]/td[5]/button");
+    private By conditionButton = By.id("condition");
+    private By value = By.id("value");
+    private By confirmButton = By.xpath("//*[@id=\"innerContainer\"]/div[8]/button[2]");
+    private By emailAlert = By.xpath("/html/body/app/div[2]/div/div/table/tbody/tr[6]/td[5]/button");
     private By emailValue =By.id("email");
     private By textEmail=By.id("message");
-    private By pause=By.id("innerDiv");
+    private By pause=By.xpath("//*[@id=\"innerContainer\"]");
+    private By check =By.xpath("/html/body/app/div[2]/div/h1");
 
     public CreateAlertsPage(WebDriver driver) {
         this.driver = driver;
@@ -24,28 +23,20 @@ public class CreateAlertsPage extends TestCommons {
 
     public void clickAlert() {
         driver.findElement(alertButton).click();
-
     }
 
     public void setCondition() {
-
         driver.findElement(conditionButton).click();
     }
 
-    public void setSelectCondition()
-
-    {
+    public void setSelectCondition() {
         Select options = new Select(driver.findElement(By.tagName("select")));
         options.selectByVisibleText("Crossing");
-
     }
 
-    public void setValueType()
-
-    {
+    public void setValueType() {
         Select size = new Select(driver.findElement(By.id("valueType")));
         size.selectByVisibleText("Price");
-
     }
 
     public void setValue() {
@@ -53,11 +44,8 @@ public class CreateAlertsPage extends TestCommons {
         driver.findElement(value).sendKeys("50");
     }
 
-
     public void setConfirmButton() {
-
         driver.findElement(confirmButton).click();
-
     }
 
     public void setPause(){
@@ -73,7 +61,6 @@ public class CreateAlertsPage extends TestCommons {
     public void setValueType2() {
         Select size = new Select(driver.findElement(By.id("valueType")));
         size.selectByVisibleText("Volume");
-
     }
 
     public void setValue2() {
@@ -81,11 +68,9 @@ public class CreateAlertsPage extends TestCommons {
         driver.findElement(value).sendKeys("3");
     }
 
-
     public void setSendEmail(){
         WebElement checkbox = driver.findElement(By.id("sendEmail"));
-     checkbox.click();
-
+        checkbox.click();
     }
 
     public void setEmailValue(){
@@ -98,5 +83,8 @@ public class CreateAlertsPage extends TestCommons {
         driver.findElement(textEmail).sendKeys("testowanie");
     }
 
+    public String getMessage() {
+        return driver.findElement(check).getText();
+    }
 }
 

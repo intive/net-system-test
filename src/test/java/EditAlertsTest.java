@@ -1,15 +1,12 @@
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import selenium.base.TestBase;
 import selenium.pages.EditAlertPage;
 
-
 public class EditAlertsTest extends TestBase {
 
     @Test(groups = "loginRequired")
-
-    public void editAlertsTest() throws InterruptedException {
+    public void editAlertsTest(){
         EditAlertPage editAlert=new EditAlertPage(driver);
 
         editAlert.setMyProfile();
@@ -20,7 +17,7 @@ public class EditAlertsTest extends TestBase {
         editAlert.setPause();
         editAlert.setConfirm();
 
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/app/div[3]/div[2]/div[3]/h1")).getText().equals("My Alerts"));
+        Assert.assertEquals(editAlert.getMessage(), "Dashboard");
     }
 }
 

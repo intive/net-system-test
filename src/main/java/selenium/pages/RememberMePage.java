@@ -1,16 +1,15 @@
 package selenium.pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import selenium.base.TestCommons;
 
-public class RememberMePage extends TestCommons {
+public class RememberMePage {
     private WebDriver driver;
 
     private By login = By.id("inputUsername");
     private By password = By.id("inputPassword");
-    private By submitButton = By.xpath("/html/body/app/div/div/div/div/div[2]/form/button");
+    private By submitButton = By.xpath("/html/body/app/div/div/div/div/div/form/div[4]/input");
+    private By check = By.xpath("/html/body/app/div[2]/div/h1");
 
     public RememberMePage(WebDriver driver)  {
         this.driver = driver;
@@ -39,9 +38,10 @@ public class RememberMePage extends TestCommons {
     public void signIn(String strLogin, String strPassword) {
         this.setLogin(strLogin);
         this.setPassword(strPassword);
-
-
     }
 
+    public String getMessage() {
+        return driver.findElement(check).getText();
+    }
 }
 

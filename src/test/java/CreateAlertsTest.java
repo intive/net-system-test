@@ -1,10 +1,12 @@
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import selenium.base.TestBase;
 import selenium.pages.CreateAlertsPage;
+
 public class CreateAlertsTest extends TestBase {
 
     @Test(groups = "loginRequired")
-    public void alertsTest() throws InterruptedException {
+    public void alertsTest(){
         CreateAlertsPage createAlerts = new CreateAlertsPage(driver);
 
         createAlerts.clickAlert();
@@ -27,6 +29,7 @@ public class CreateAlertsTest extends TestBase {
         createAlerts.setMessage();
         createAlerts.setConfirmButton();
 
+        Assert.assertEquals(createAlerts.getMessage(), "Dashboard");
     }
 
 }

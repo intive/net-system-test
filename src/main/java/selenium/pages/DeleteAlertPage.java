@@ -1,16 +1,14 @@
 package selenium.pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import selenium.base.TestCommons;
 
-public class DeleteAlertPage extends TestCommons {
+public class DeleteAlertPage {
     private WebDriver driver;
 
-    private By myProfile = By.xpath("/html/body/app/div[2]/div[2]/ul/li[2]/a");
-    private By myAlerts = By.xpath("/html/body/app/div[3]/div[2]/div[2]/div/button[1]");
-    private By delete = By.xpath("/html/body/app/div[3]/div[2]/div[6]/div[1]/div[2]/button[2]/span"); //ścieżka do wybranego alertu
-    private By accept = By.xpath("/html/body/app/div[3]/div[2]/div[2]/div");
+    private By myProfile = By.xpath("/html/body/app/nav/ul/li[3]/a");
+    private By myAlerts = By.xpath("//*[@id=\"exTab3\"]/ul/li[2]/a");
+    private By delete = By.xpath("//*[@id=\"2b\"]/div[3]/div[1]/div[2]/button[2]/span"); //ścieżka do wybranego alertu
+    private By check =By.xpath("/html/body/app/nav/ul/li[1]/a");
 
 
     public DeleteAlertPage(WebDriver driver) {
@@ -33,7 +31,7 @@ public class DeleteAlertPage extends TestCommons {
         driver.switchTo(). alert(). accept();
     }
 
-    public void setAccept(){
-        driver.findElement(accept);
+    public String getMessage() {
+        return driver.findElement(check).getText();
     }
 }

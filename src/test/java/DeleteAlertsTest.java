@@ -1,4 +1,3 @@
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import selenium.base.TestBase;
@@ -15,8 +14,7 @@ public class DeleteAlertsTest extends TestBase {
        deleteAlert.setDelete();
        Thread.sleep(1000); // bez tego test nie przechodzi
        deleteAlert.setAlert();
-       deleteAlert.setAccept();
 
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/app/div[3]/div[2]/div[3]/h1")).getText().equals("My Alerts"));
+        Assert.assertEquals(deleteAlert.getMessage(), "Dashboard");
     }
 }
