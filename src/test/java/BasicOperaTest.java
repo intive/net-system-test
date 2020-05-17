@@ -25,4 +25,5 @@ public class BasicOperaTest {
         Assert.assertEquals(driver.getTitle(), "BTB", "Valid page title. Opera browser open.");
         driver.quit();
     }
+
 }
