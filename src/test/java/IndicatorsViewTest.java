@@ -33,4 +33,5 @@ public class IndicatorsViewTest extends TestBase {
         actions.perform();
         Assert.assertNotNull(indicatorsScrollView.rsiChart, "Changed view in RSI chart");
     }
+
 }
