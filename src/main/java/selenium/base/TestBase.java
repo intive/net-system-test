@@ -6,19 +6,29 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 import selenium.pages.LoginPage;
+
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     protected WebDriver driver;
-    public final String url = "https://qa-patronage-btb.azurewebsites.net/";
+    private String url;
 
     @BeforeSuite
-    public void setChromedriverPath() {
+    public void setUp() {
         WebDriverManager.chromedriver().version("81").setup();
+        Properties props = new Properties();
+        try {
+            props.load(this.getClass().getResourceAsStream("/main.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        url = "https://" + props.getProperty("env") + "-patronage-btb.azurewebsites.net/";
     }
 
     @BeforeTest
-    public void setUp() {
+    public void setBrowser() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
 

@@ -6,6 +6,24 @@
     <groupId>org.intive.patronage</groupId>
     <artifactId>btb-system-test</artifactId>
     <version>1.0</version>
+    <properties>
+        <environment>qa</environment>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <profiles>
+        <profile>
+            <id>DEV</id>
+            <properties>
+                <environment>dev</environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>QA</id>
+            <properties>
+                <environment>qa</environment>
+            </properties>
+        </profile>
+    </profiles>
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
@@ -72,6 +90,12 @@
         </dependency>
     </dependencies>
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
