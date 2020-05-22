@@ -99,4 +99,21 @@
             <class name="BasicChromeTest"/>
         </classes>
     </test>
+    <test name="Currency buttons">
+        <classes>
+            <class name="CurrencyButtonsTest"></class>
+        </classes>
+    </test>
+    <test name="Filter">
+        <classes>
+            <class name="FilterTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Quantity buttons">
+        <classes>
+            <class name="QuantityButtonsTest">
+            </class>
+        </classes>
+    </test>
 </suite>

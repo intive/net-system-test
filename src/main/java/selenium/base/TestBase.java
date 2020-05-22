@@ -17,7 +17,7 @@ public class TestBase {
 
     @BeforeSuite
     public void setUp() {
-        WebDriverManager.chromedriver().version("81").setup();
+        WebDriverManager.chromedriver().setup();
         Properties props = new Properties();
         try {
             props.load(this.getClass().getResourceAsStream("/main.properties"));
@@ -41,7 +41,7 @@ public class TestBase {
     @BeforeMethod(onlyForGroups = "loginRequired")
     public void login(){
         LoginPage lp=new LoginPage(driver);
-        lp.signIn("test1234", "test1234");
+        lp.signIn("admin", "admin");
     }
 
     @AfterTest

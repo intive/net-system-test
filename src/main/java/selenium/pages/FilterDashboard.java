@@ -9,10 +9,10 @@ public class FilterDashboard extends TestCommons {
     private WebDriver driver;
     private By filterField = By.id("inputvalue");
     private By panel = By.cssSelector("body > app > div.container > div > div > form");
-    private By filter = By.cssSelector("body > app > div.container > div > div > form > button.btn.btn-primary.btn-sm.mr-1:not([style=\"pointer-events: none;\"])");
+    private By filter = By.cssSelector("body > app > div.container > div > div > form > div > button.btn.btn-primary.btn-sm.mr-2:not([style=\"pointer-events: none;\"])");
     private By pairValues = By.cssSelector("body > app > div.container > div > div > table > tbody > tr > td:nth-child(2) > a");
     private By pairValuesTwo = By.cssSelector("body > app > div.container > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > a");
-    private By validationMessage = By.cssSelector("body > app > div.container > div > div > form > div.validation-message");
+    private By validationMessage = By.cssSelector("body > app > div.container > div > div > form > div > div.validation-message");
 
     public FilterDashboard(WebDriver driver)
     {this.driver = driver;
