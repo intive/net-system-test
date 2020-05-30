@@ -15,6 +15,6 @@ public class DeleteAlertsTest extends TestBase {
        Thread.sleep(1000); // bez tego test nie przechodzi
        deleteAlert.setAlert();
 
-        Assert.assertEquals(deleteAlert.getMessage(), "Dashboard");
+        Assert.assertEquals(deleteAlert.getMessage(), "Alerts");
     }
 }

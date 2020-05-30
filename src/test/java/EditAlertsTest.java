@@ -17,7 +17,7 @@ public class EditAlertsTest extends TestBase {
         editAlert.setPause();
         editAlert.setConfirm();
 
-        Assert.assertEquals(editAlert.getMessage(), "Dashboard");
+        Assert.assertEquals(editAlert.getMessage(), "Alerts");
     }
 }
 

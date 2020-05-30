@@ -10,9 +10,9 @@ public class EditAlertPage {
     private By myAlerts = By.xpath("//*[@id=\"exTab3\"]/ul/li[2]/a");
     private By alert = By.xpath("//*[@id=\"2b\"]/div[3]/div[1]/div[2]/button[1]/span");
     private By value = By.id("value");
-    private By confirm= By.xpath("//*[@id=\"innerContainer\"]/div[8]/button[2]");
-    private By pause=By.xpath("//*[@id=\"innerContainer\"]/div[8]");
-    private By check =By.xpath("/html/body/app/nav/ul/li[1]/a");
+    private By confirm= By.xpath("/html/body/app/div[1]/div[2]/div/div/form/div/div[7]/button[2]");
+    private By pause=By.xpath("/html/body/app/div[1]/div[2]/div/div/form/div/h3[1]");
+    private By check =By.xpath("//*[@id=\"exTab3\"]/ul/li[2]/a");
 
     public EditAlertPage(WebDriver driver) {
         this.driver = driver;

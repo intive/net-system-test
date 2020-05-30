@@ -2,8 +2,8 @@ package selenium.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 import org.testng.annotations.*;
 import selenium.pages.LoginPage;
 
@@ -17,7 +17,7 @@ public class TestBase {
 
     @BeforeSuite
     public void setUp() {
-        WebDriverManager.chromedriver().version("81").setup();
+        WebDriverManager.operadriver().setup();
         Properties props = new Properties();
         try {
             props.load(this.getClass().getResourceAsStream("/main.properties"));
@@ -29,12 +29,12 @@ public class TestBase {
 
     @BeforeTest
     public void setBrowser() {
-        ChromeOptions options = new ChromeOptions();
+        OperaOptions options = new OperaOptions();
         options.addArguments("--incognito");
 
-        driver = new ChromeDriver(options);
+        driver = new OperaDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         driver.get(url);
     }
 
