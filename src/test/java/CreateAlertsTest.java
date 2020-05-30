@@ -26,7 +26,6 @@ public class CreateAlertsTest extends TestBase {
         createAlerts.setSendEmail();
         createAlerts.setPause();
         createAlerts.setEmailValue();
-        createAlerts.setMessage();
         createAlerts.setConfirmButton();
 
         Assert.assertEquals(createAlerts.getMessage(), "Dashboard");

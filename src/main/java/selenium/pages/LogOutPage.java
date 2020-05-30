@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 public class LogOutPage {
     private WebDriver driver;
 
-    private By logoutButton = By.xpath("/html/body/app/nav/ul/li[4]/button");
+    private By logoutButton = By.xpath("/html/body/app/nav/ul/li[6]/button/p");
     private By check = By.xpath("/html/body/app/div/div/div/div/div/h5");
 
     public LogOutPage(WebDriver driver) {

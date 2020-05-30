@@ -10,12 +10,14 @@ public class CreateAlertsPage {
     private By alertButton = By.xpath("/html/body/app/div[2]/div/div/table/tbody/tr[1]/td[5]/button");
     private By conditionButton = By.id("condition");
     private By value = By.id("value");
-    private By confirmButton = By.xpath("//*[@id=\"innerContainer\"]/div[8]/button[2]");
+    private By confirmButton = By.xpath("/html/body/app/div[1]/div[2]/div/div/form/div/div[7]/button[2]");
+    private By betweenButton = By.xpath("/html/body/app/div[1]/div[2]/div/div/form/div/div[8]/button[2]");
     private By emailAlert = By.xpath("/html/body/app/div[2]/div/div/table/tbody/tr[6]/td[5]/button");
     private By emailValue =By.id("email");
-    private By textEmail=By.id("message");
-    private By pause=By.xpath("//*[@id=\"innerContainer\"]");
+    private By pause=By.xpath("/html/body/app/div[1]/div[2]/div");
     private By check =By.xpath("/html/body/app/div[2]/div/h1");
+    private By lowerValue = By.xpath("//*[@id=\"value\"]");
+    private By upperValue = By.xpath("//*[@id=\"additionalValue\"]");
 
     public CreateAlertsPage(WebDriver driver) {
         this.driver = driver;
@@ -47,6 +49,9 @@ public class CreateAlertsPage {
     public void setConfirmButton() {
         driver.findElement(confirmButton).click();
     }
+    public void setBetweenButton() {
+        driver.findElement(betweenButton).click();
+    }
 
     public void setPause(){
         driver.findElement(pause).click();
@@ -72,15 +77,35 @@ public class CreateAlertsPage {
         WebElement checkbox = driver.findElement(By.id("sendEmail"));
         checkbox.click();
     }
+    public void setOnlyOnce(){
+        WebElement checkbox = driver.findElement(By.id("triggerOnce"));
+        checkbox.click();
+    }
 
     public void setEmailValue(){
         driver.findElement(emailValue).clear();
         driver.findElement(emailValue).sendKeys("testPATRON20@gmail.com");
     }
 
-    public void setMessage(){
-        driver.findElement(textEmail).clear();
-        driver.findElement(textEmail).sendKeys("testowanie");
+    public void setCrossingUp() {
+        Select options = new Select(driver.findElement(By.tagName("select")));
+        options.selectByVisibleText("Crossing Up");
+    }
+    public void setCrossingDown() {
+        Select options = new Select(driver.findElement(By.tagName("select")));
+        options.selectByVisibleText("Crossing Down");
+    }
+    public void setBetween() {
+        Select options = new Select(driver.findElement(By.tagName("select")));
+        options.selectByVisibleText("Between");
+    }
+    public void setLowerValue() {
+        driver.findElement(lowerValue).clear();
+        driver.findElement(lowerValue).sendKeys("3");
+    }
+    public void setUpperValue() {
+        driver.findElement(upperValue).clear();
+        driver.findElement(upperValue).sendKeys("4");
     }
 
     public String getMessage() {

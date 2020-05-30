@@ -18,6 +18,6 @@ public class SortAlertsTest extends TestBase {
         sortAlert.setSort2();
         sortAlert.setCollapse();
 
-        Assert.assertEquals(sortAlert.getMessage(), "Dashboard");
+        Assert.assertEquals(sortAlert.getMessage(), "Alerts");
     }
 }

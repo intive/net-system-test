@@ -9,8 +9,9 @@ public class CreateAccountTest extends TestBase {
     public void testCreateAccountPage() throws InterruptedException{
         CreateAccountPage createAccount = new CreateAccountPage(driver);
 
-        createAccount.createAccount("qazq21", "testp@21.pl", "test", "test");
-        Thread.sleep(2000); // bez tego nie przechodzi
+        createAccount.createAccount("qazq30", "qazq30","testp@30.pl", "test", "test");
+        createAccount.clickCreateAccount();
+       Thread.sleep(5000); // bez tego nie przechodzi
 
         Assert.assertEquals(createAccount.getMessage(),"Sign In");
     }

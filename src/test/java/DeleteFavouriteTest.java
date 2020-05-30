@@ -9,6 +9,7 @@ public class DeleteFavouriteTest extends TestBase {
     public void deleteFavourite() throws InterruptedException {
         FavouritePage favourite = new FavouritePage(driver);
 
+        Thread.sleep(5000);
         favourite.setMyProfile();
         favourite.setMyFavourite();
         Thread.sleep(1000); //bez tego test nie przechodzi
@@ -19,7 +20,7 @@ public class DeleteFavouriteTest extends TestBase {
         favourite.setMyProfile();
         favourite.setMyFavourite();
 
-        Assert.assertEquals(favourite.getMessage(), "Dashboard");
+        Assert.assertEquals(favourite.getMessageDelete(), "First");
 
     }
 }

@@ -36,6 +36,11 @@
             <class name="EditAlertsTest"/>
         </classes>
     </test>
+    <test name="Crossing Tests">
+        <classes>
+            <class name="CrossingTest"/>
+        </classes>
+    </test>
     <test name="Edit profile">
         <classes>
             <class name="EditTest"/>
@@ -61,9 +66,19 @@
             <class name="SortAlertsTest"/>
         </classes>
     </test>
-    <test name="Change Password">
+    <test name="Create Bets">
         <classes>
-            <class name="ChangePasswordTest"/>
+            <class name="CreateBetsTest"/>
+        </classes>
+    </test>
+    <test name="Edit Bets">
+        <classes>
+            <class name="EditBetsTest"/>
+        </classes>
+    </test>
+    <test name="Delete Bets">
+        <classes>
+            <class name="DeleteBetsTest"/>
         </classes>
     </test>
     <test name="History View">
@@ -97,6 +112,11 @@
             <class name="BasicFirefoxTest"/>
             <class name="BasicEdgeTest"/>
             <class name="BasicChromeTest"/>
+        </classes>
+    </test>
+    <test name="Change Password">
+        <classes>
+            <class name="ChangePasswordTest"/>
         </classes>
     </test>
 </suite>

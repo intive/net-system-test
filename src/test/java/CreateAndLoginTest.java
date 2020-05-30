@@ -10,11 +10,12 @@ public class CreateAndLoginTest extends TestBase {
     public void testCreateAndLoginPage()throws InterruptedException{
         CreateAccountPage createAccount = new CreateAccountPage(driver);
 
-        createAccount.createAccount("1243","testPA@21.com","test1234", "test1234");
+        createAccount.createAccount("11111","11111","testPA@23.com","test1234", "test1234");
+        createAccount.clickCreateAccount();
         Thread.sleep(2000); // bez tego nie przechodzi
 
         LoginPage login=new LoginPage(driver);
-        login.signIn("1243", "test1234");
+        login.signIn("11111", "test1234");
         login.clickSignIn();
 
         Assert.assertEquals(login.getMessages(), "Dashboard");
