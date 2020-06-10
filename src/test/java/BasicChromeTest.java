@@ -18,7 +18,7 @@ public class BasicChromeTest {
     public void tearDown() { driver.quit(); }
 
     @Test
-    public void openBrowser() {
+    public void openChromeBrowser() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
         WebDriver driver = new ChromeDriver(options);
@@ -26,6 +26,5 @@ public class BasicChromeTest {
         driver.get("https://dev-patronage-btb.azurewebsites.net");
         driver.get(url);
         Assert.assertEquals(driver.getTitle(), "BTB", "Valid page title. Chrome browser open.");
-        driver.quit();
     }
 }

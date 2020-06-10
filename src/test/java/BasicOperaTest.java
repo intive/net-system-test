@@ -14,7 +14,7 @@ public class BasicOperaTest {
     public void tearDown() { driver.quit(); }
 
     @Test
-    public static void openBrowser() {
+    public static void openOperaBrowser() {
         System.setProperty("webdriver.opera.driver", "D:\\Patronage 2020\\Repo\\BitCoiny\\patronage-qa-bitcoiny\\bitcoiny\\operadriver.exe");
         OperaOptions options = new OperaOptions();
         options.addArguments("--incognito");
@@ -25,5 +25,4 @@ public class BasicOperaTest {
         Assert.assertEquals(driver.getTitle(), "BTB", "Valid page title. Opera browser open.");
         driver.quit();
     }
-
 }

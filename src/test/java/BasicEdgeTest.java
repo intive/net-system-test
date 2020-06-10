@@ -14,8 +14,8 @@ public class BasicEdgeTest {
     public void tearDown() { driver.quit(); }
 
     @Test
-    public void openBrowser () {
-        System.setProperty("webdriver.edge.driver", "D:\\Patronage 2020\\Repo\\BitCoiny\\patronage-qa-bitcoiny\\bitcoiny\\msedgedriver.exe");
+    public void openEdgeBrowser () {
+        System.setProperty("webdriver.edge.driver", "D:\\Patronage 2020\\Repo\\BitCoiny\\patronage-qa-bitcoiny\\bitcoiny\\edgedriver\\msedgedriver.exe");
         EdgeOptions options = new EdgeOptions();
         options.setCapability("InPrivate", true);
 
