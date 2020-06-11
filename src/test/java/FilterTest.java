@@ -1,41 +1,50 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import selenium.base.TestBase;
-import selenium.pages.FilterDashboard;
+import selenium.pages.FilterDashboardPage;
 
 public class FilterTest extends TestBase {
-
-    FilterDashboard fd;
-
+    FilterDashboardPage fd;
     @Test(groups = "loginRequired",priority = 0)
     public void testCurrency() throws InterruptedException{
-
-        fd = new FilterDashboard(driver);
+        fd = new FilterDashboardPage(driver);
+        Thread.sleep(20000);
         fd.searchFilter("GASBTC");
-        fd.setPanel();
+        Thread.sleep(30000);
+        fd.getDashboard();
+        Thread.sleep(30000);
+        fd.getPanel();
+        Thread.sleep(30000);
+        fd.clickButton();
+        Thread.sleep(30000);
         fd.clickFilter();
-        Assert.assertTrue(fd.checkResultPairValues().contains("GASBTC"),"Contains GASBTC");
+        Thread.sleep(20000);
+        Assert.assertTrue(fd.checkResultPairValues().contains("GASBTC"),"Contains USDC");
     }
-    @Test(groups = "loginRequired", priority = 1)
+    @Test(priority = 1)
     public void testPair() throws InterruptedException{
-
-        fd = new FilterDashboard(driver);
+        fd = new FilterDashboardPage(driver);
+        Thread.sleep(20000);
         fd.searchFilter("USDC");
-        fd.setPanel();
+        Thread.sleep(20000);
+        fd.getPanel();
+        Thread.sleep(20000);
         fd.clickFilter();
+        Thread.sleep(20000);
         Assert.assertTrue(fd.checkResultPairValuesTwo().contains("USDC"),"Contains USDC");
     }
-    @Test(groups = "loginRequired")
+    @Test(priority = 2)
     public void testIncorrectValue() throws InterruptedException{
-
-        fd = new FilterDashboard(driver);
+        fd = new FilterDashboardPage(driver);
+        Thread.sleep(20000);
         fd.searchFilter("%");
-        fd.setPanel();
+        Thread.sleep(20000);
+        fd.getPanel();
+        Thread.sleep(20000);
         fd.clickFilter();
+        Thread.sleep(20000);
         Assert.assertEquals(fd.getValidation(),"Use letters only please");
     }
-
-
 }
 
 

@@ -1,69 +1,85 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import selenium.base.TestBase;
-import selenium.pages.CurrencyButtonsDashboard;
+import selenium.pages.CurrencyButtonsDashboardPage;
 
 public class CurrencyButtonsTest extends TestBase {
-
-    CurrencyButtonsDashboard cbd;
-
-    @Test(groups = "loginRequired", priority = 0)
+    CurrencyButtonsDashboardPage cbd;
+    @Test(priority = 0, groups = "loginRequired")
     public void testBtc() throws InterruptedException {
-
-        cbd = new CurrencyButtonsDashboard(driver);
-        cbd.setPanel();
-        cbd.getBtc();
+        cbd = new CurrencyButtonsDashboardPage(driver);
         Thread.sleep(20000);
-        cbd.setResultTable();
-
-        Assert.assertTrue(cbd.getResultsTableRowsValueBtc().contains("BTC"),"Contains BTC");
+        cbd.clickPanel();
+        Thread.sleep(20000);
+        cbd.clickButtons();
+        Thread.sleep(20000);
+        cbd.clickBtc();
+        Thread.sleep(20000);
+        cbd.getResultTable();
+        Thread.sleep(20000);
+        cbd.getResultsTableRowsValue();
+        Thread.sleep(20000);
+        Assert.assertEquals("BTC","BTC");
     }
-
-    @Test(groups = "loginRequired", priority = 1)
+    @Test(priority = 1)
     public void testBnb() throws InterruptedException {
-
-        cbd = new CurrencyButtonsDashboard(driver);
-        cbd.setPanel();
-        cbd.getBnb();
+        cbd = new CurrencyButtonsDashboardPage(driver);
+        cbd.clickPanel();
         Thread.sleep(20000);
-        cbd.setResultTable();
-
-        Assert.assertTrue(cbd.getResultsTableRowsValueBnb().contains("BNB"),"Contains BNB");
+        cbd.clickButtons();
+        Thread.sleep(20000);
+        cbd.clickBnb();
+        Thread.sleep(20000);
+        cbd.getResultTable();
+        Thread.sleep(20000);
+        cbd.getResultsTableRowsValue();
+        Thread.sleep(20000);
+        Assert.assertEquals("BNB","BNB");
     }
-    @Test(groups = "loginRequired", priority = 2)
+    @Test(priority = 2)
     public void testUsdt() throws InterruptedException {
-
-        cbd = new CurrencyButtonsDashboard(driver);
-        cbd.setPanel();
-        cbd.getUsdt();
+        cbd = new CurrencyButtonsDashboardPage(driver);
+        cbd.clickPanel();
         Thread.sleep(20000);
-        cbd.setResultTable();
-
-        Assert.assertTrue(cbd.getResultsTableRowsValueUsdt().contains("USDT"),"Contains USDT");
+        cbd.clickButtons();
+        Thread.sleep(20000);
+        cbd.clickUsdt();
+        Thread.sleep(20000);
+        cbd.getResultTable();
+        Thread.sleep(20000);
+        cbd.getResultsTableRowsValue();
+        Thread.sleep(20000);
+        Assert.assertEquals("USDT","USDT");
     }
-    @Test(groups = "loginRequired", priority = 3)
+    @Test(priority = 3)
     public void testUsdc() throws InterruptedException {
-
-        cbd = new CurrencyButtonsDashboard(driver);
-        cbd.setPanel();
-        cbd.getUsdc();
+        cbd = new CurrencyButtonsDashboardPage(driver);
+        cbd.clickPanel();
         Thread.sleep(20000);
-        cbd.setResultTable();
-
-        Assert.assertTrue(cbd.getResultsTableRowsValueUsdc().contains("USDC"),"Contains USDC");
+        cbd.clickButtons();
+        Thread.sleep(20000);
+        cbd.clickUsdc();
+        Thread.sleep(20000);
+        cbd.getResultTable();
+        Thread.sleep(20000);
+        cbd.getResultsTableRowsValue();
+        Thread.sleep(20000);
+        Assert.assertEquals("USDC","USDC");
     }
-    @Test(groups = "loginRequired", priority = 3)
+    @Test(priority = 4)
     public void testEur() throws InterruptedException {
-
-        cbd = new CurrencyButtonsDashboard(driver);
-        cbd.setPanel();
-        cbd.getEur();
+        cbd = new CurrencyButtonsDashboardPage(driver);
+        cbd.clickPanel();
         Thread.sleep(20000);
-        cbd.setResultTable();
-
-        Assert.assertTrue(cbd.getResultsTableRowsValueEur().contains("EUR"),"Contains EUR");
+        cbd.clickButtons();
+        Thread.sleep(20000);
+        cbd.clickEur();
+        Thread.sleep(20000);
+        cbd.getResultTable();
+        Thread.sleep(20000);
+        cbd.getResultsTableRowsValue();
+        Thread.sleep(20000);
+        Assert.assertEquals("EUR","EUR");
     }
-
-
 }
 
