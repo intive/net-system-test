@@ -7,12 +7,14 @@ public class DeleteBetsTest extends TestBase {
     @Test(groups = "loginRequired")
     public void betsDeleteTest() {
         BetsPage bets = new BetsPage(driver);
-
         bets.setBets();
         bets.setMyBets();
         bets.setDeleteBets();
+        Assert.assertEquals(bets.getMonit(),"Are you sure want to delete this bet?");
         bets.setOk();
-
-        Assert.assertEquals(bets.getMessage(), "User");
+        bets.setRefresh();
+        bets.setMyBets();
+        bets.setResult();
+        Assert.assertEquals(bets.getTableSize(), 2);
     }
 }

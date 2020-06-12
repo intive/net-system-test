@@ -6,15 +6,14 @@ import selenium.pages.DeleteAlertPage;
 public class DeleteAlertsTest extends TestBase {
 
     @Test(groups = "loginRequired")
-    public void deleteAlert() throws InterruptedException {
-        DeleteAlertPage deleteAlert=new DeleteAlertPage(driver);
-
-       deleteAlert.setMyProfile();
-       deleteAlert.setMyAlerts();
-       deleteAlert.setDelete();
-       Thread.sleep(1000); // bez tego test nie przechodzi
-       deleteAlert.setAlert();
-
-        Assert.assertEquals(deleteAlert.getMessage(), "Alerts");
+    public void deleteAlert(){
+        DeleteAlertPage deleteAlert = new DeleteAlertPage(driver);
+        deleteAlert.setMyProfile();
+        deleteAlert.setMyAlerts();
+        deleteAlert.setDelete();
+        Assert.assertEquals(deleteAlert.getMonit(), "Are you sure want to delete this alert?");
+        deleteAlert.setAlert();
+        deleteAlert.setRefresh();
+        deleteAlert.setMyAlerts();
     }
 }

@@ -6,12 +6,11 @@ import selenium.pages.RememberMePage;
 public class RememberMeTest extends TestBase {
 
     @Test
-    public void rememberMeTest(){
+    public void rememberMeTest() {
         RememberMePage rememberMe=new RememberMePage(driver);
-        rememberMe.signIn("test1234", "test1234");
+        rememberMe.signIn();
         rememberMe.setRememberMe();
         rememberMe.clickSignIn();
-
         Assert.assertEquals(rememberMe.getMessage(), "Dashboard");
     }
 }

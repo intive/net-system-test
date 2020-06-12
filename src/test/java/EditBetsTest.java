@@ -5,16 +5,18 @@ import selenium.pages.BetsPage;
 
 public class EditBetsTest extends TestBase {
     @Test(groups = "loginRequired")
-    public void betsDeleteTest() throws InterruptedException{
+    public void betsDeleteTest(){
         BetsPage bets = new BetsPage(driver);
-
         bets.setBets();
         bets.setMyBets();
+        Assert.assertTrue(bets.getUserBets().contains("Ala123"), "There are bets for present user");
         bets.setEditBets();
+        Assert.assertTrue(bets.getEditBets().contains("Update a bet"));
         bets.setEditPoints();
-        Thread.sleep(2000);
+        bets.setType();
         bets.setChangeButton();
-
-        Assert.assertEquals(bets.getMessage(), "User");
+        bets.setRefresh();
+        bets.setMyBets();
+        Assert.assertEquals(bets.getChangePoints(),"♢ 80");
     }
 }

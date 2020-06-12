@@ -6,21 +6,19 @@ import selenium.pages.FavouritePage;
 public class DeleteFavouriteTest extends TestBase {
 
     @Test(groups = "loginRequired")
-    public void deleteFavourite() throws InterruptedException {
+    public void deleteFavourite() {
         FavouritePage favourite = new FavouritePage(driver);
-
-        Thread.sleep(5000);
         favourite.setMyProfile();
-        favourite.setMyFavourite();
-        Thread.sleep(1000); //bez tego test nie przechodzi
+        Assert.assertEquals(favourite.getMessage(), "✖");
         favourite.setDeleteFavourite();
+        favourite.setRefresh();
         favourite.setDashboard();
-        Thread.sleep(1000); //bez tego test nie przechodzi
         favourite.setDeletePair();
+        favourite.setRefresh();
+        Assert.assertEquals(favourite.getEmptyStar(),"☆");
         favourite.setMyProfile();
         favourite.setMyFavourite();
-
-        Assert.assertEquals(favourite.getMessageDelete(), "First");
-
+        favourite.setResult();
+        Assert.assertEquals(favourite.getTableSize(), 0);
     }
 }
