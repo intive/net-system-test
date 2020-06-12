@@ -2,77 +2,66 @@ package selenium.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateAlertsPage {
     private WebDriver driver;
-
-    private By alertButton = By.xpath("/html/body/app/div[2]/div/div/table/tbody/tr[1]/td[5]/button");
+    private By alertButton = By.cssSelector("body > app > div.container > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5) > button");
     private By conditionButton = By.id("condition");
     private By value = By.id("value");
-    private By confirmButton = By.xpath("/html/body/app/div[1]/div[2]/div/div/form/div/div[7]/button[2]");
-    private By betweenButton = By.xpath("/html/body/app/div[1]/div[2]/div/div/form/div/div[8]/button[2]");
-    private By emailAlert = By.xpath("/html/body/app/div[2]/div/div/table/tbody/tr[6]/td[5]/button");
+    private By confirmButton = By.cssSelector(".btn-success");
+    private By emailAlert = By.cssSelector(".table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(5) > button:nth-child(1)");
     private By emailValue =By.id("email");
-    private By pause=By.xpath("/html/body/app/div[1]/div[2]/div");
-    private By check =By.xpath("/html/body/app/div[2]/div/h1");
-    private By lowerValue = By.xpath("//*[@id=\"value\"]");
-    private By upperValue = By.xpath("//*[@id=\"additionalValue\"]");
+    private By pause=By.cssSelector("body > app > div.blazored-modal-container.blazored-modal-center.blazored-modal-active > div.blazored-modal-wrapper > div > div > form > div > div.text-right");
+    private By check =By.cssSelector("body > app > div.container > div > h1");
+    private By lowerValue = By.id("value");
+    private By upperValue = By.id("additionalValue");
+    private By alertForm = By.cssSelector("body > app > div.blazored-modal-container.blazored-modal-center.blazored-modal-active > div.blazored-modal-wrapper > div > div > form > div > h3:nth-child(1)");
 
     public CreateAlertsPage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void clickAlert() {
+        WebDriverWait element = new WebDriverWait(driver, 60);
+        element.until(ExpectedConditions.elementToBeClickable(alertButton));
         driver.findElement(alertButton).click();
     }
-
     public void setCondition() {
         driver.findElement(conditionButton).click();
     }
-
     public void setSelectCondition() {
         Select options = new Select(driver.findElement(By.tagName("select")));
         options.selectByVisibleText("Crossing");
     }
-
     public void setValueType() {
         Select size = new Select(driver.findElement(By.id("valueType")));
         size.selectByVisibleText("Price");
     }
-
     public void setValue() {
         driver.findElement(value).clear();
         driver.findElement(value).sendKeys("50");
     }
-
     public void setConfirmButton() {
         driver.findElement(confirmButton).click();
     }
-    public void setBetweenButton() {
-        driver.findElement(betweenButton).click();
-    }
-
     public void setPause(){
         driver.findElement(pause).click();
     }
-
-
-  // alerty z adresem e-mail
-
     public void setEmailAlert(){
+        WebDriverWait element = new WebDriverWait(driver, 60);
+        element.until(ExpectedConditions.elementToBeClickable(emailAlert));
         driver.findElement(emailAlert).click();
     }
     public void setValueType2() {
         Select size = new Select(driver.findElement(By.id("valueType")));
         size.selectByVisibleText("Volume");
     }
-
     public void setValue2() {
         driver.findElement(value).clear();
-        driver.findElement(value).sendKeys("3");
+        driver.findElement(value).sendKeys("38000");
     }
-
     public void setSendEmail(){
         WebElement checkbox = driver.findElement(By.id("sendEmail"));
         checkbox.click();
@@ -81,12 +70,6 @@ public class CreateAlertsPage {
         WebElement checkbox = driver.findElement(By.id("triggerOnce"));
         checkbox.click();
     }
-
-    public void setEmailValue(){
-        driver.findElement(emailValue).clear();
-        driver.findElement(emailValue).sendKeys("testPATRON20@gmail.com");
-    }
-
     public void setCrossingUp() {
         Select options = new Select(driver.findElement(By.tagName("select")));
         options.selectByVisibleText("Crossing Up");
@@ -107,9 +90,16 @@ public class CreateAlertsPage {
         driver.findElement(upperValue).clear();
         driver.findElement(upperValue).sendKeys("4");
     }
-
     public String getMessage() {
         return driver.findElement(check).getText();
     }
+    public String getAlertForm() {
+        return driver.findElement(alertForm).getText();
+    }
+    public String getEmail(){return driver.findElement(emailValue).getText();}
+    public String getCrossingUp(){return driver.findElement(conditionButton).getText();}
+    public String getCrossingDown(){return driver.findElement(conditionButton).getText();}
+    public String getBetween(){return driver.findElement(conditionButton).getText();}
 }
+
 

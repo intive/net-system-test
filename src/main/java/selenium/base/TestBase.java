@@ -2,6 +2,8 @@ package selenium.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import org.testng.annotations.*;
@@ -17,6 +19,7 @@ public class TestBase {
 
     @BeforeSuite
     public void setUp() {
+        //WebDriverManager.chromedriver().version("81").setup();
         WebDriverManager.operadriver().setup();
         Properties props = new Properties();
         try {
@@ -29,10 +32,12 @@ public class TestBase {
 
     @BeforeTest
     public void setBrowser() {
+        //ChromeOptions options = new ChromeOptions();
         OperaOptions options = new OperaOptions();
         options.addArguments("--incognito");
 
         driver = new OperaDriver(options);
+       // driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         driver.get(url);

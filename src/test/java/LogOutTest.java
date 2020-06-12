@@ -6,11 +6,9 @@ import selenium.pages.LogOutPage;
 public class LogOutTest extends TestBase {
 
     @Test(groups = "loginRequired")
-    public void logoutPageTest() throws InterruptedException{
+    public void logoutPageTest() {
         LogOutPage logOut=new LogOutPage(driver);
-        Thread.sleep(4000);
         logOut.clickLogout();
-
         Assert.assertEquals(logOut.getMessage(),"Sign In");
     }
 }
