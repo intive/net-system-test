@@ -19,7 +19,7 @@ public class CreateBetsTest extends TestBase {
         bets.setConfirm();
         bets.setBets();
         bets.setMyBets();
-        bets.setResultTable();
-        Assert.assertEquals(bets.getResultsTableRowsSize(), 3);
+        bets.setResult();
+        Assert.assertEquals(bets.getTableSize(), 3);
     }
 }
