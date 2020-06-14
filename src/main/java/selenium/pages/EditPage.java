@@ -10,7 +10,7 @@ public class EditPage {
     private By editUsername = By.id("username");
     private By editBio = By.id("profileBio");
     private By editFavourite = By.id("favouritePair");
-    private By option = By.cssSelector("#favouritePair > option:nth-child(4)"); //GASBTC
+    private By option = By.cssSelector("#favouritePair > option:nth-child(4)");
     private By changesButton =By.cssSelector(".btn.btn-primary");
     private By check =By.cssSelector("body > app > div.container > div > div.jumbotron > div > div.text-center > h1");
     private By profileCheck = By.cssSelector(".col-12.col-lg-3.col-xl-3");

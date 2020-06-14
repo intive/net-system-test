@@ -11,6 +11,6 @@ public class RememberMeTest extends TestBase {
         rememberMe.signIn();
         rememberMe.setRememberMe();
         rememberMe.clickSignIn();
-        Assert.assertEquals(rememberMe.getMessage(), "Dashboard");
+        Assert.assertEquals(rememberMe.getMessage(), "Dashboard","Redirection to dashboard is failed");
     }
 }

@@ -11,11 +11,15 @@ public class CreateAlertsPage {
     private By alertButton = By.cssSelector("body > app > div.container > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5) > button");
     private By conditionButton = By.id("condition");
     private By value = By.id("value");
+    private By valueType = By.id("valueType");
+    private By select = By.tagName("select");
     private By confirmButton = By.cssSelector(".btn-success");
     private By emailAlert = By.cssSelector(".table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(5) > button:nth-child(1)");
-    private By emailValue =By.id("email");
-    private By pause=By.cssSelector("body > app > div.blazored-modal-container.blazored-modal-center.blazored-modal-active > div.blazored-modal-wrapper > div > div > form > div > div.text-right");
-    private By check =By.cssSelector("body > app > div.container > div > h1");
+    private By emailValue = By.id("email");
+    private By sendEmail = By.id("sendEmail");
+    private By triggerOnce = By.id("triggerOnce");
+    private By pause = By.cssSelector("body > app > div.blazored-modal-container.blazored-modal-center.blazored-modal-active > div.blazored-modal-wrapper > div > div > form > div > div.text-right");
+    private By check = By.cssSelector("body > app > div.container > div > h1");
     private By lowerValue = By.id("value");
     private By upperValue = By.id("additionalValue");
     private By alertForm = By.cssSelector("body > app > div.blazored-modal-container.blazored-modal-center.blazored-modal-active > div.blazored-modal-wrapper > div > div > form > div > h3:nth-child(1)");
@@ -32,16 +36,16 @@ public class CreateAlertsPage {
         driver.findElement(conditionButton).click();
     }
     public void setSelectCondition() {
-        Select options = new Select(driver.findElement(By.tagName("select")));
+        Select options = new Select(driver.findElement(select));
         options.selectByVisibleText("Crossing");
     }
     public void setValueType() {
-        Select size = new Select(driver.findElement(By.id("valueType")));
+        Select size = new Select(driver.findElement(valueType));
         size.selectByVisibleText("Price");
     }
     public void setValue() {
         driver.findElement(value).clear();
-        driver.findElement(value).sendKeys("50");
+        driver.findElement(value).sendKeys("60");
     }
     public void setConfirmButton() {
         driver.findElement(confirmButton).click();
@@ -55,31 +59,31 @@ public class CreateAlertsPage {
         driver.findElement(emailAlert).click();
     }
     public void setValueType2() {
-        Select size = new Select(driver.findElement(By.id("valueType")));
+        Select size = new Select(driver.findElement(valueType));
         size.selectByVisibleText("Volume");
     }
     public void setValue2() {
         driver.findElement(value).clear();
-        driver.findElement(value).sendKeys("38000");
+        driver.findElement(value).sendKeys("39000");
     }
     public void setSendEmail(){
-        WebElement checkbox = driver.findElement(By.id("sendEmail"));
+        WebElement checkbox = driver.findElement(sendEmail);
         checkbox.click();
     }
     public void setOnlyOnce(){
-        WebElement checkbox = driver.findElement(By.id("triggerOnce"));
+        WebElement checkbox = driver.findElement(triggerOnce);
         checkbox.click();
     }
     public void setCrossingUp() {
-        Select options = new Select(driver.findElement(By.tagName("select")));
+        Select options = new Select(driver.findElement(select));
         options.selectByVisibleText("Crossing Up");
     }
     public void setCrossingDown() {
-        Select options = new Select(driver.findElement(By.tagName("select")));
+        Select options = new Select(driver.findElement(select));
         options.selectByVisibleText("Crossing Down");
     }
     public void setBetween() {
-        Select options = new Select(driver.findElement(By.tagName("select")));
+        Select options = new Select(driver.findElement(select));
         options.selectByVisibleText("Between");
     }
     public void setLowerValue() {

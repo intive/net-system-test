@@ -11,7 +11,7 @@ public class DeleteAlertsTest extends TestBase {
         deleteAlert.setMyProfile();
         deleteAlert.setMyAlerts();
         deleteAlert.setDelete();
-        Assert.assertEquals(deleteAlert.getMonit(), "Are you sure want to delete this alert?");
+        Assert.assertEquals(deleteAlert.getMonit(), "Are you sure want to delete this alert?","Deleting alert is impossible");
         deleteAlert.setAlert();
         deleteAlert.setRefresh();
         deleteAlert.setMyAlerts();

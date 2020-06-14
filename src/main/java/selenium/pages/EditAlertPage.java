@@ -9,6 +9,7 @@ public class EditAlertPage {
     private By myAlerts = By.cssSelector("a[href*='#2b']");
     private By alert = By.cssSelector("#\\32 b > div:nth-child(6) > div.card-header.d-flex.flex-row.justify-content-between > div:nth-child(2) > button:nth-child(1) > span");
     private By value = By.id("value");
+    private By valueType = By.id("valueType");
     private By confirm= By.cssSelector("body > app > div.blazored-modal-container.blazored-modal-center.blazored-modal-active > div.blazored-modal-wrapper > div > div > form > div > div.text-right > button.btn.btn-success.btn-sm");
     private By pause = By.cssSelector("body > app > div.blazored-modal-container.blazored-modal-center.blazored-modal-active > div.blazored-modal-wrapper > div > div > form > div > div.text-right");
     private By alertList = By.id("2b");
@@ -29,13 +30,11 @@ public class EditAlertPage {
         driver.findElement(alert).click();
     }
     public void setValueType(){
-        Select size = new Select(driver.findElement(By.id("valueType")));
-        size.selectByVisibleText("Price");
-    }
+        Select size = new Select(driver.findElement(valueType));
+        size.selectByVisibleText("Price"); }
     public void setValue() {
         driver.findElement(value).clear();
-        driver.findElement(value).sendKeys("100");
-    }
+        driver.findElement(value).sendKeys("120"); }
     public void setAlertExpand() {
         driver.findElement(alertExpand).click();
     }

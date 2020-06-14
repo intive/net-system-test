@@ -11,14 +11,14 @@ public class SortAlertsTest extends TestBase {
         sortAlert.setMyProfile();
         sortAlert.setMyAlerts();
         sortAlert.setDropDownButton();
-        Assert.assertEquals(sortAlert.getSortList(),"Symbol\n" + "Condition\n" + "Value Type\n" + "Value\n" + "Email");
+        Assert.assertEquals(sortAlert.getSortList(),"Symbol\n" + "Condition\n" + "Value Type\n" + "Value\n" + "Email","No options are available");
         sortAlert.setOption();
         sortAlert.setExpand();
         sortAlert.setSort1();
-        Assert.assertEquals(sortAlert.getCrossing(), "Crossing");
+        Assert.assertEquals(sortAlert.getCrossing(), "Crossing","Crossing option is not visible");
         sortAlert.setSort2();
-        Assert.assertEquals(sortAlert.getBetween(), "Between");
+        Assert.assertEquals(sortAlert.getBetween(), "Between","Between option is not visible");
         sortAlert.setCollapse();
-        Assert.assertEquals(sortAlert.getMessage(), "Alerts");
+        Assert.assertEquals(sortAlert.getMessage(), "Alerts","Alerts view is not available");
     }
 }

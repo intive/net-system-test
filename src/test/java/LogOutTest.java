@@ -9,7 +9,7 @@ public class LogOutTest extends TestBase {
     public void logoutPageTest() {
         LogOutPage logOut=new LogOutPage(driver);
         logOut.clickLogout();
-        Assert.assertEquals(logOut.getMessage(),"Sign In");
+        Assert.assertEquals(logOut.getMessage(),"Sign In","User logout is failed, redirection to login page has not been done");
     }
 }
 

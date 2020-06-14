@@ -37,8 +37,7 @@ public class BetsPage {
     public void setBetButton(){
         WebDriverWait element= new WebDriverWait(driver, 60);
         element.until(ExpectedConditions.elementToBeClickable(betButton));
-        driver.findElement(betButton).click();
-    }
+        driver.findElement(betButton).click(); }
     public void setPoints(){
         driver.findElement(points).sendKeys("20");
     }
@@ -46,17 +45,15 @@ public class BetsPage {
         WebDriverWait element= new WebDriverWait(driver, 60);
         element.until(ExpectedConditions.visibilityOfElementLocated(visibilityElement));
         driver.findElement(change).clear();
-        driver.findElement(change).sendKeys("80");
-    }
+        driver.findElement(change).sendKeys("60"); }
     public void setLowerValue(){
         driver.findElement(lowerValue).sendKeys("3");
     }
     public void setDuration(){
         WebElement dropdownButton = driver.findElement(duration);
-        dropdownButton.click();
-    }
+        dropdownButton.click(); }
     public void setOption(){
-       new Select(driver.findElement(By.id("timeInterval"))).selectByVisibleText("Two Days");
+       new Select(driver.findElement(duration)).selectByVisibleText("Two Days");
     }
     public void setConfirm(){
         driver.findElement(confirm).click();
@@ -67,27 +64,23 @@ public class BetsPage {
     public void setChangeButton(){
         WebDriverWait element= new WebDriverWait(driver, 60);
         element.until(ExpectedConditions.elementToBeClickable(changeButton));
-        driver.findElement(changeButton).click();
-    }
+        driver.findElement(changeButton).click(); }
     public void setBets(){
         driver.findElement(bets).click();
     }
     public void setMyBets(){
         WebDriverWait element= new WebDriverWait(driver, 60);
         element.until(ExpectedConditions.elementToBeClickable(myBets));
-        driver.findElement(myBets).click();
-    }
+        driver.findElement(myBets).click(); }
     public void setEditBets(){
         driver.findElement(editBets).click();
     }
     public void setDeleteBets(){
         driver.findElement(deleteBets).click();
     }
-    public void setRefresh(){
-        driver.navigate().refresh();
-    }
+    public void setRefresh(){ driver.navigate().refresh(); }
     public void setOk(){
-        driver.switchTo(). alert(). accept();
+        driver.switchTo().alert().accept();
     }
     public String getBetsForm(){return driver.findElement(betsForm).getText();}
     public String getBetType(){return driver.findElement(betType).getText();}
@@ -99,14 +92,12 @@ public class BetsPage {
     }
     public String getChangePoints() {
         driver.findElements(myBets);
-        return driver.findElement(changePoints).getText();
-    }
+        return driver.findElement(changePoints).getText(); }
     public void setResult() {
         results = driver.findElement(table);
     }
     public int getTableSize() {
         List<WebElement> tableRows = results.findElements(list);
-        return tableRows.size();
-    }
+        return tableRows.size(); }
   }
 

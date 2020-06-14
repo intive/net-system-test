@@ -8,6 +8,7 @@ public class RememberMePage {
     private By login = By.id("inputUsername");
     private By password = By.id("inputPassword");
     private By submitButton = By.cssSelector(".login_btn");
+    private By inputRememberMe = By.id("inputRememberMe");
     private By check = By.cssSelector("body > app > div.container > div > h1");
 
     public RememberMePage(WebDriver driver)  {
@@ -25,7 +26,7 @@ public class RememberMePage {
         driver.findElement(submitButton).click();
     }
     public void setRememberMe(){
-        WebElement checkbox = driver.findElement(By.id("inputRememberMe"));
+        WebElement checkbox = driver.findElement(inputRememberMe);
         checkbox.click();
     }
     public void signIn() {

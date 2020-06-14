@@ -24,7 +24,7 @@ public class DeleteAlertPage {
         driver.findElement(delete).click();
     }
     public void setAlert(){
-        driver.switchTo(). alert(). accept();
+        driver.switchTo().alert().accept();
     }
     public String getMonit(){
         return driver.switchTo().alert().getText();

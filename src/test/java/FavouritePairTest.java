@@ -12,9 +12,9 @@ public class FavouritePairTest extends TestBase {
         favourite.setMyFavourite();
         favourite.setDashboard();
         favourite.setFavourite1();
-        Assert.assertEquals(favourite.getGoldenStar(),"★");
+        Assert.assertEquals(favourite.getGoldenStar(),"★","Selected pair has already deleted or not set as a favourite");
         favourite.setFavourite2();
         favourite.setMyProfile();
-        Assert.assertEquals(favourite.getMessage(), "✖");
+        Assert.assertEquals(favourite.getMessage(), "✖","No favourite pair was set");
     }
 }

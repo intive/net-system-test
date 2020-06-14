@@ -10,6 +10,6 @@ public class LoginPageTest extends TestBase {
         LoginPage loginPage=new LoginPage(driver);
         loginPage.signIn("test1234", "test1234");
         loginPage.clickSignIn();
-        Assert.assertEquals(loginPage.getMessages(), "Dashboard");
+        Assert.assertEquals(loginPage.getMessages(), "Dashboard","Redirection to dashboard is failed");
     }
 }
