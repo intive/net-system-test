@@ -10,9 +10,9 @@ public class EditAlertsTest extends TestBase {
         EditAlertPage editAlert=new EditAlertPage(driver);
         editAlert.setMyProfile();
         editAlert.setMyAlerts();
-        Assert.assertNotNull(editAlert.getAlertList());
+        Assert.assertNotNull(editAlert.getAlertList(),"There are not alert available, alerts list is empty");
         editAlert.setAlert();
-        Assert.assertTrue(editAlert.getEditAlerts().contains("Update an alert"));
+        Assert.assertTrue(editAlert.getEditAlerts().contains("Update an alert"),"Form for update an alert is not available");
         editAlert.setValueType();
         editAlert.setValue();
         editAlert.setPause();
@@ -20,7 +20,7 @@ public class EditAlertsTest extends TestBase {
         editAlert.setRefresh();
         editAlert.setMyAlerts();
         editAlert.setAlertExpand();
-        Assert.assertEquals(editAlert.getValueCheck(), "100,000000000");
+        Assert.assertEquals(editAlert.getValueCheck(), "120,000000000","Set value is not as expected");
     }
 }
 

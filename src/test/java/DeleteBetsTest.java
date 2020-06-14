@@ -10,11 +10,11 @@ public class DeleteBetsTest extends TestBase {
         bets.setBets();
         bets.setMyBets();
         bets.setDeleteBets();
-        Assert.assertEquals(bets.getMonit(),"Are you sure want to delete this bet?");
+        Assert.assertEquals(bets.getMonit(),"Are you sure want to delete this bet?", "Deleting bets is impossible");
         bets.setOk();
         bets.setRefresh();
         bets.setMyBets();
         bets.setResult();
-        Assert.assertEquals(bets.getTableSize(), 2);
+        Assert.assertEquals(bets.getTableSize(), 2, "Table size is different than expected");
     }
 }

@@ -11,11 +11,11 @@ public class CreateAndLoginTest extends TestBase {
         CreateAccountPage createAccount = new CreateAccountPage(driver);
         createAccount.createAccount("4111222abc", "4111222abc","testp@4111222abc.pl", "test", "test");
         createAccount.clickCreateAccount();
-        Assert.assertEquals(createAccount.getMessage(),"Sign In");
+        Assert.assertEquals(createAccount.getMessage(),"Sign In","Login page is not available");
         LoginPage login=new LoginPage(driver);
         login.signIn("4111222abc", "test");
         login.clickSignIn();
-        Assert.assertEquals(login.getMessages(), "Dashboard");
+        Assert.assertEquals(login.getMessages(), "Dashboard","There were no redirect to dashboard page");
     }
 }
 

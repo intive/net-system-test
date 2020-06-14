@@ -9,17 +9,17 @@ public class CreateBetsTest extends TestBase {
     public void betsTest() {
         BetsPage bets = new BetsPage(driver);
         bets.setBetButton();
-        Assert.assertTrue(bets.getBetsForm().contains("Place a bet"), "You can write a bet");
+        Assert.assertTrue(bets.getBetsForm().contains("Place a bet"), "There is not a bets form");
         bets.setPoints();
         bets.setLowerValue();
-        Assert.assertTrue(bets.getBetType().contains("Standard"),"Standard option is selected");
+        Assert.assertTrue(bets.getBetType().contains("Standard"),"Bet type is not available");
         bets.setDuration();
         bets.setOption();
-        Assert.assertTrue(bets.getDuration().contains("Two Days"), "Duration option is selected");
+        Assert.assertTrue(bets.getDuration().contains("Two Days"), "Duration selection is not available");
         bets.setConfirm();
         bets.setBets();
         bets.setMyBets();
         bets.setResult();
-        Assert.assertEquals(bets.getTableSize(), 3);
+        Assert.assertEquals(bets.getTableSize(), 5, "Table size is different than expected");
     }
 }

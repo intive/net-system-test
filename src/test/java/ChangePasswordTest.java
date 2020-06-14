@@ -11,10 +11,10 @@ public class ChangePasswordTest extends TestBase {
         changePassword.clickProfile();
         changePassword.clickEdit();
         changePassword.clickChange();
-        Assert.assertEquals(changePassword.getForm(),"Change Password");
+        Assert.assertEquals(changePassword.getForm(),"Change Password","Form for change password is not available");
         changePassword.passwordChange();
-        Assert.assertNotNull(changePassword.getMonit());
+        Assert.assertNotNull(changePassword.getMonit(),"There is no pop-up redirects to login page");
         changePassword.clickForward();
-        Assert.assertEquals(changePassword.getMessage(), "Sign In");
+        Assert.assertEquals(changePassword.getMessage(), "Sign In","Login page is not available");
     }
 }

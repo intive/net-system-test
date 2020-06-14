@@ -10,7 +10,7 @@ public class CreateAccountTest extends TestBase {
         CreateAccountPage createAccount = new CreateAccountPage(driver);
         createAccount.createAccount("1111333abc", "1111333abc","testp@1111333abc.pl", "test", "test");
         createAccount.clickCreateAccount();
-        Assert.assertEquals(createAccount.getMessage(),"Sign In");
+        Assert.assertEquals(createAccount.getMessage(),"Sign In","Login page is not available");
     }
 }
 
