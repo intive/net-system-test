@@ -69,5 +69,4 @@ public class HistoryViewPage extends PageBase {
     }
 
     public String getDetailsMessage() { return getElementText(detailsMessageBtc); }
-
 }

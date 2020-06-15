@@ -86,5 +86,4 @@ public class SubscribePage extends PageBase {
     public String getValidationMessage() { return getElementText(validationMessage); }
 
     public String getDashboardMessage() { return getElementText(dashboardView); }
-
 }

@@ -43,5 +43,4 @@ public class PageBase {
         element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return element.getSize();
     }
-
 }

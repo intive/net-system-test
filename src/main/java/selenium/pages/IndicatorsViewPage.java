@@ -62,4 +62,5 @@ public class IndicatorsViewPage extends PageBase {
     }
 
     public String checkRsiText() { return getElementText(rsiLabel); }
+
 }

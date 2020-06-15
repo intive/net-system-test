@@ -68,8 +68,6 @@ public class SubscribePageTest extends TestBase {
         posSubCheckAlerts.checkAlert();
         try {
             Assert.assertEquals(posSubCheckAlerts.getConfirmOnlyOnce(), "Yes", "Changed to Only Once option");
-        } catch (Exception a) {
-            Assert.fail("Back to Dashboard Page");
-        }
+        } catch (Exception a) { Assert.fail("Back to Dashboard Page"); }
     }
 }

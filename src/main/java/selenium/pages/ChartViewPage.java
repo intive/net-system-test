@@ -39,5 +39,4 @@ public class ChartViewPage extends PageBase {
         clickWhenReady(twelveHoursButton);
         clickWhenReady(oneDayButton);
     }
-
 }

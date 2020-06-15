@@ -89,5 +89,4 @@ public class NegativeSubscribePageTest extends TestBase {
         negSubPagePriceNoMail.setConfirmButton();
         Assert.assertEquals(negSubPagePriceNoMail.getValidationMessage(), "Email is required.", "Empty Email input checked");
     }
-
 }

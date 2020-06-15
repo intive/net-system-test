@@ -34,4 +34,5 @@ public class HistoryViewTest extends TestBase {
         histTimeElTest.clickTimeElements();
         System.out.println("Every kline interval checked.");
     }
+
 }
