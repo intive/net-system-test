@@ -37,7 +37,7 @@ public class TestBase {
         options.addArguments("--incognito");
 
         driver = new OperaDriver(options);
-       // driver = new ChromeDriver(options);
+        //driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         driver.get(url);

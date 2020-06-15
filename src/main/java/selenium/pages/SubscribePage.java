@@ -2,10 +2,11 @@ package selenium.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import selenium.base.PageBase;
 
-public class SubscribePage {
 
-    private WebDriver driver;
+public class SubscribePage extends PageBase {
+
     private By subscribeButton = By.cssSelector(".table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(5) > button:nth-child(1)");
     private By conditionInput = By.id("condition");
     private By valueType = By.id("valueType");
@@ -13,22 +14,23 @@ public class SubscribePage {
     private By onlyOnce = By.id("triggerOnce");
     private By sendEmailInput = By.id("sendEmail");
     private By emailInput = By.id("email");
-    private By messageInput = By.id("message");
     private By confirmButton = By.cssSelector(".btn-success");
-    private By cancelButton = By.cssSelector("button.btn-danger:nth-child(1)");
-    private By heading = By.cssSelector("#innerContainer > h3:nth-child(1)");
+    private By cancelButton = By.cssSelector(".btn-danger");
+    private By heading = By.cssSelector(".modal-container > h3:nth-child(1)");
     private By validationMessage = By.className("validation-message");
     private By dashboardView = By.cssSelector(".content > h1:nth-child(1)");
-    private By myProfileButton = By.cssSelector("li.nav-item:nth-child(3) > a:nth-child(1)");
-    public By alertsButton = By.cssSelector(".rounded-right > a:nth-child(1)");
+    private By myProfileButton = By.xpath("/html/body/app/nav/ul/li[4]/a");
+    public By alertsButton = By.className("rounded-right");
+    private By alertSingleButton = By.cssSelector(".card-header");
+    private By pencilButton = By.cssSelector(".oi-pencil");
+    private By triggerOnce = By.id("triggerOnce");
+    private By onlyOnceText = By.cssSelector("div.card:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > p:nth-child(2)");
 
-    public SubscribePage(WebDriver driver) {
-        this.driver = driver;
-    }
+    public SubscribePage(WebDriver driver) { super(driver); }
 
-    public void setSubscribeButton() {
-        driver.findElement(subscribeButton).click();
-    }
+    public void WebDriver(WebDriver driver) { this.driver = driver; }
+
+    public void setSubscribeButton() { clickWhenReady(subscribeButton); }
 
     public void setConditionInput(String condition_input) {
         Select condition = new Select(driver.findElement(conditionInput));
@@ -41,46 +43,47 @@ public class SubscribePage {
     }
 
     public void setValueInput(String value_input) {
-        driver.findElement(valueInput).clear();
+        clearElement(valueInput);
         driver.findElement(valueInput).sendKeys(value_input);
     }
 
-    public void goToMyAlerts() {
-        driver.findElement(myProfileButton).click();
-        driver.findElement(alertsButton).click();
-    }
-
     public void setOnlyOnce() {
-        driver.findElement(onlyOnce).click();
+        clickWhenReady(onlyOnce);
+        clickWhenReady(onlyOnce);
     }
 
-    public void setSendEmail() {
-        driver.findElement(sendEmailInput).click();
-    }
+    public void setSendEmail() { clickWhenReady(sendEmailInput); }
 
     public void setEmailInput(String mail_input) {
+        clearElement(emailInput);
+        clickWhenReady(emailInput);
         driver.findElement(emailInput).sendKeys(mail_input);
     }
 
-    public void setMessageInput(String message_input) {
-        driver.findElement(messageInput).sendKeys(message_input);
+    public void goToMyAlerts() {
+        clickWhenReady(myProfileButton);
+        clickWhenReady(alertsButton);
     }
 
-    public void setConfirmButton() {
-        driver.findElement(confirmButton).click();
+    public void checkAlert() {
+        clickWhenReady(alertSingleButton);
+        clickWhenReady(pencilButton);
+        clickWhenReady(triggerOnce);
+        clickWhenReady(confirmButton);
     }
 
-    public void setCancelButton() {
-        driver.findElement(cancelButton).click();
+    public String getConfirmOnlyOnce() {
+        clickWhenReady(alertSingleButton);
+        return getElementText(onlyOnceText);
     }
 
-    public String isSubscribePageOpen() {
-        return driver.findElement(heading).getText();
-    }
+    public void setConfirmButton() { clickWhenReady(confirmButton); }
 
-    public String getValidationMessage() { return driver.findElement(validationMessage).getText(); }
+    public void setCancelButton() { clickWhenReady(cancelButton); }
 
-    public String getDashboardMessage() {
-        return driver.findElement(dashboardView).getText();
-    }
+    public String isSubscribePageOpen() { return getElementText(heading); }
+
+    public String getValidationMessage() { return getElementText(validationMessage); }
+
+    public String getDashboardMessage() { return getElementText(dashboardView); }
 }

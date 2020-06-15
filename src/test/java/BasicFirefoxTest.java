@@ -15,7 +15,7 @@ public class BasicFirefoxTest {
     public void tearDown() { driver.quit(); }
 
     @Test
-    public void openBrowser() {
+    public void openFirefoxBrowser() {
         System.setProperty("webdriver.gecko.driver", "D:\\Patronage 2020\\Repo\\BitCoiny\\patronage-qa-bitcoiny\\bitcoiny\\geckodriver.exe");
         FirefoxOptions options = new FirefoxOptions();
         FirefoxProfile firefoxProfile = new FirefoxProfile();

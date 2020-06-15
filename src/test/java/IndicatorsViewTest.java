@@ -5,21 +5,22 @@ import org.testng.annotations.Test;
 import selenium.base.TestBase;
 import selenium.pages.IndicatorsViewPage;
 
+
 public class IndicatorsViewTest extends TestBase {
 
     @Test(priority=0, groups = "loginRequired")
     public void indicatorsPositiveTest() {
+
         IndicatorsViewPage indicPositiveTest = new IndicatorsViewPage(driver);
         indicPositiveTest.clickIndicatorsButton();
         Assert.assertNotNull(indicPositiveTest.rsiChart, "RSI is default indicator");
-        indicPositiveTest.checkRsiButton();
         indicPositiveTest.checkSmaButton();
         Assert.assertNotNull(indicPositiveTest.smaChart, "SMA Chart view");
         indicPositiveTest.checkRsiButton();
         Assert.assertEquals(indicPositiveTest.checkRsiText(), "RSI timeframe");
-        indicPositiveTest.checkSmaKlinePrice("sma");
+        indicPositiveTest.checkSmaKlinePrice();
         Assert.assertNotNull(indicPositiveTest.smaChart, "SMA chart");
-        indicPositiveTest.checkRsiTimeframe("rsi");
+        indicPositiveTest.checkRsiTimeframe();
         Assert.assertNotNull(indicPositiveTest.rsiChart, "RSI chart");
     }
 
