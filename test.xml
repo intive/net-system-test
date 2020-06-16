@@ -119,4 +119,21 @@
             <class name="ChangePasswordTest"/>
         </classes>
     </test>
+    <test name="filtering table by currency">
+        <classes>
+            <class name="CurrencyButtonsTest"></class>
+        </classes>
+    </test>
+    <test name="filter testing">
+        <classes>
+            <class name="FilterTest">
+            </class>
+        </classes>
+    </test>
+    <test name="filtering the table by quantity">
+        <classes>
+            <class name="QuantityButtonsTest">
+            </class>
+        </classes>
+    </test>
 </suite>
